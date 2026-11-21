@@ -1,0 +1,1662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="web_standard" name="shell-type">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <style>
+        @layer base {
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                overscroll-behavior: none;
+            }
+
+            main>:first-child {
+                margin-top: 0 !important;
+            }
+
+            main>:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        /* Custom Luxury Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fff8f7;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e1bebe;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #960928;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+        id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary-container": "#fdced4", "on-secondary": "#ffffff", "secondary": "#78555a", "on-primary-fixed": "#40000b", "on-surface": "#26181b", "on-background": "#26181b", "background": "#fff8f7", "inverse-primary": "#ffb3b4", "inverse-on-surface": "#ffecee", "on-secondary-container": "#79565b", "on-primary": "#ffffff", "on-tertiary-fixed-variant": "#4e4446", "surface-container": "#ffe9eb", "surface-container-high": "#fce2e5", "on-tertiary-fixed": "#21191b", "primary-fixed": "#ffdada", "on-primary-container": "#ffd4d4", "outline-variant": "#e1bebe", "on-primary-fixed-variant": "#910325", "primary-fixed-dim": "#ffb3b4", "on-tertiary-container": "#eadadc", "secondary-fixed": "#ffd9de", "error": "#ba1a1a", "inverse-surface": "#3c2c2f", "on-tertiary": "#ffffff", "surface-tint": "#b3253a", "on-error-container": "#93000a", "surface-container-lowest": "#ffffff", "error-container": "#ffdad6", "on-secondary-fixed-variant": "#5e3e43", "primary": "#960928", "surface-variant": "#f7dce0", "secondary-fixed-dim": "#e8bbc1", "on-error": "#ffffff", "surface-container-highest": "#f7dce0", "tertiary-container": "#6a5f61", "tertiary": "#524749", "tertiary-fixed": "#eedfe1", "outline": "#8d7070", "primary-container": "#b8293d", "surface-container-low": "#fff0f1", "surface-dim": "#eed4d7", "on-surface-variant": "#594041", "on-secondary-fixed": "#2d1419", "surface": "#fff8f7", "tertiary-fixed-dim": "#d2c3c5", "surface-bright": "#fff8f7" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1.5rem", "space-md": "1rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "margin-mobile": "1.25rem", "space-xxl": "4rem", "space-lg": "1.5rem", "space-xl": "2.5rem", "margin": "3rem", "gutter-mobile": "1rem" }, "fontFamily": { "headline-md": ["Playfair Display"], "display-lg": ["Playfair Display"], "label-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "display-lg-mobile": ["Playfair Display"], "label-sm": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-lg": ["Playfair Display"], "label-lg": ["Plus Jakarta Sans"], "headline-sm": ["Playfair Display"], "headline-lg-mobile": ["Playfair Display"], "body-md": ["Plus Jakarta Sans"] }, "fontSize": { "headline-md": ["28px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "500" }], "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }], "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-sm": ["22px", { "lineHeight": "30px", "letterSpacing": "0em", "fontWeight": "600" }], "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "500" }], "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }] } } } }</script>
+</head>
+
+<body class="bg-surface font-body-md text-on-surface antialiased" id="home">
+    <header
+        class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(58,42,45,0.06)]">
+        <div class="h-20 max-w-7xl mx-auto px-gutter flex items-center justify-between gap-space-md">
+            <div class="flex items-center gap-space-sm"><img alt="Angels Beauty Corner Logo"
+                    class="h-8 w-auto object-contain"
+                    src="https://lh3.googleusercontent.com/aida/ALJJyrAhCt9uJTuMoy1TReM9HcahkwoddBTbgUjEJ1hqtiE9gqOwVQEo-w433nIahBcuMG2ZEq-qjGM0JeMTJ36DYa_hb5dcxP1-ZTfRq4qJaK-ONNEaRfsYbu-BteBAQndno0402I_0ODwlXpBMlnv4recCA1hCRvCue5XeuM99FOWMd48ZXQY9YTsQ-guiU03Pr1-WoVglCEmTMqrQItazSuNUuGq2fL6iA0I9bLBgeedhzQ"><span
+                    class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Angels Beauty Corner</span>
+            </div>
+            <nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-bold"><a
+                    aria-current="page" class="transition-colors text-primary font-bold" data-path="home"
+                    href="#">Home</a><a
+                    class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors"
+                    data-path="services" href="#">Services</a><a
+                    class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors"
+                    data-path="products" href="#">Products</a><a
+                    class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors"
+                    data-path="booking" href="#">Booking</a><a
+                    class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors"
+                    data-path="about" href="#">About</a><a
+                    class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors"
+                    data-path="contact" href="#">Contact</a></nav>
+            <div class="flex items-center gap-space-md"><button
+                    class="p-space-xs text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center"
+                    onclick="handleSearchClick()"
+                    type="button"><span class="material-symbols-outlined text-[22px]">search</span></button><button
+                    class="relative p-space-xs text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center"
+                    onclick="scrollToSection('products')"
+                    type="button"><span class="material-symbols-outlined text-[22px]">shopping_bag</span><span
+                        class="absolute -top-1 -right-1 bg-primary text-on-primary font-label-sm text-label-sm w-4 h-4 rounded-full flex items-center justify-center"
+                        id="header-cart-badge">0</span></button><a
+                    class="hidden sm:inline-flex items-center justify-center px-space-lg py-space-sm bg-primary-container text-on-primary font-label-lg text-label-lg rounded-full hover:bg-primary transition-colors shadow-[0_4px_12px_rgba(184,41,61,0.2)]"
+                    data-path="booking" href="#">Book Now</a>
+                <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span
+                        class="material-symbols-outlined text-on-primary text-[18px]">person</span></div>
+            </div>
+        </div>
+    </header>
+    <main class="w-full pt-20 bg-surface min-h-[calc(100vh-20rem)]">
+        <div class="flex flex-col w-full">
+            <!-- HERO SECTION -->
+            <section class="relative w-full overflow-hidden bg-surface py-space-xl lg:py-space-xxl">
+                <!-- Ambient Rose Glow Accents -->
+                <div
+                    class="absolute -top-32 -left-20 w-96 h-96 rounded-full bg-secondary-container/40 blur-3xl pointer-events-none">
+                </div>
+                <div
+                    class="absolute top-1/2 -right-32 w-[30rem] h-[30rem] rounded-full bg-surface-variant/60 blur-3xl pointer-events-none">
+                </div>
+                <div class="max-w-7xl mx-auto px-gutter relative z-10">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+                        <!-- Left Column: Editorial & Value Proposition -->
+                        <div class="lg:col-span-7 flex flex-col gap-space-md lg:pr-space-lg">
+                            <!-- Eyebrow Badge -->
+                            <div
+                                class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-high w-fit shadow-sm">
+                                <span class="material-symbols-outlined text-[18px] text-primary"
+                                    style="font-variation-settings: 'FILL' 1;">spa</span>
+                                <span
+                                    class="font-label-md text-label-md text-primary tracking-wider uppercase">Exquisite
+                                    Salon &amp; At-Home Luxury Care</span>
+                            </div>
+                            <!-- Headline -->
+                            <h1 class="font-display-lg text-display-lg text-on-surface tracking-tight">
+                                Timeless Beauty &amp; <span class="italic font-normal text-primary">Bridal
+                                    Elegance</span>
+                            </h1>
+                            <!-- Body Copy -->
+                            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                                Bespoke bridal makeovers, signature hair artistry, and rejuvenating clinical skin
+                                rituals. Experience premier atelier pampering inside our serene sanctuary or via our
+                                dedicated VIP at-home salon concierge.
+                            </p>
+                            <!-- Dual CTAs -->
+                            <div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+                                <a class="inline-flex items-center gap-space-xs px-space-xl py-space-sm bg-primary-container text-on-primary font-label-lg text-label-lg rounded-full shadow-[0_8px_24px_-4px_rgba(184,41,61,0.3)] hover:bg-primary transition-all duration-300"
+                                    href="#booking" onclick="switchBookingMode('salon')">
+                                    <span class="material-symbols-outlined text-[20px]">calendar_month</span>
+                                    <span>Online Booking</span>
+                                </a>
+                                <a class="inline-flex items-center gap-space-xs px-space-lg py-space-sm bg-surface-container text-on-surface font-label-lg text-label-lg rounded-full hover:bg-surface-container-high transition-all duration-300 shadow-sm"
+                                    href="#booking" onclick="switchBookingMode('home')">
+                                    <span class="material-symbols-outlined text-[20px] text-primary">home_pin</span>
+                                    <span>Home Service Booking</span>
+                                </a>
+                            </div>
+                            <!-- Trust Badges -->
+                            <div
+                                class="flex flex-wrap items-center gap-space-lg pt-space-md text-on-surface-variant font-label-md text-label-md">
+                                <div class="flex items-center gap-space-xs">
+                                    <span class="material-symbols-outlined text-[18px] text-primary"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="font-bold text-on-surface">4.9 / 5.0</span>
+                                    <span>(2,800+ Reviews)</span>
+                                </div>
+                                <div class="w-1 h-1 rounded-full bg-outline-variant"></div>
+                                <div class="flex items-center gap-space-xs">
+                                    <span class="material-symbols-outlined text-[18px] text-primary">verified</span>
+                                    <span>15,000+ Brides &amp; Clients</span>
+                                </div>
+                                <div class="w-1 h-1 rounded-full bg-outline-variant"></div>
+                                <div class="flex items-center gap-space-xs">
+                                    <span class="material-symbols-outlined text-[18px] text-primary">eco</span>
+                                    <span>Organic Clinical Actives</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Right Column: Visual Portrait with Floating Accents -->
+                        <div class="lg:col-span-5 relative flex justify-center lg:justify-end">
+                            <div class="relative w-full max-w-md">
+                                <!-- Background Pill Aura -->
+                                <div
+                                    class="absolute -inset-4 bg-gradient-to-tr from-surface-variant to-secondary-container rounded-[2.5rem] transform -rotate-2 opacity-60">
+                                </div>
+                                <!-- Main Hero Image Frame -->
+                                <div
+                                    class="relative z-10 rounded-[2rem] overflow-hidden shadow-[0_20px_40px_-8px_rgba(58,42,45,0.12)] bg-surface-container-low aspect-[4/5]">
+                                    <img class="w-full h-full object-cover"
+                                        data-alt="Exquisite close-up editorial portrait of an elegant bride wearing an off-shoulder lace wedding gown with a delicate floral pearl headband and veil. Warm golden glow, luminous glass skin makeup with soft rose lipstick, holding a tight bouquet of fragrant white baby roses and eucalyptus sprigs."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWPYC9TOyEIKmAh4AIVPmod_8vwHM1xRFdDLmNSKXsgnlWUUZdL53nazXuSLoQyaFAgOAvc5RMBk8RORtpHAL5FYaKzTiXNp9ssGu3PqBzjAZ0pfHVMmxYv3mb96q66lA_iI7dCzXZVDMrKrNHNk_jKiuOwVpq6LjjJKxfFj6KGdZFt4u5VAwYlphxpZVquVY0vDJ0AY00YghrxgK17aQe714T29G0rGWPKblvzeiM">
+                                </div>
+                                <!-- Floating Pill 1: Top Right -->
+                                <div
+                                    class="absolute -top-3 -right-3 sm:-right-6 z-20 bg-surface/90 backdrop-blur-md px-space-md py-space-xs rounded-full shadow-[0_8px_24px_-4px_rgba(58,42,45,0.08)] flex items-center gap-space-xs">
+                                    <span class="material-symbols-outlined text-primary text-[18px]"
+                                        style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                                    <span
+                                        class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider">Signature
+                                        Bridal Glow • HD Waterproof</span>
+                                </div>
+                                <!-- Floating Card 2: Bottom Left Overlap -->
+                                <div
+                                    class="absolute -bottom-5 -left-4 sm:-left-8 z-20 bg-surface-container-lowest/95 backdrop-blur-md p-space-md rounded-2xl shadow-[0_16px_32px_-6px_rgba(58,42,45,0.12)] max-w-[260px] flex items-center gap-space-sm">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center shrink-0">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-[20px]">room_service</span>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span class="font-label-sm text-label-sm text-on-surface font-bold">At-Home
+                                            Doorstep Care</span>
+                                        <span class="font-body-sm text-body-sm text-on-surface-variant">VIP Stylist Kit
+                                            brought straight to your villa</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- QUICK ANNOUNCEMENT MARQUEE -->
+            <section class="w-full bg-surface-container-high py-space-sm overflow-hidden">
+                <div
+                    class="max-w-7xl mx-auto px-gutter flex items-center justify-between text-on-surface-variant font-label-md text-label-md tracking-wider uppercase">
+                    <div class="flex items-center gap-space-md">
+                        <span class="text-primary font-bold">Complimentary Consultation:</span>
+                        <span class="hidden sm:inline">Free 20-minute bespoke bridal contour &amp; skin mapping with
+                            lead artists.</span>
+                    </div>
+                    <a class="text-primary font-bold hover:underline flex items-center gap-space-xs" href="#booking">
+                        <span>Reserve Slot</span>
+                        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                    </a>
+                </div>
+            </section>
+            <!-- SERVICES GALLERY SECTION -->
+            <section class="w-full py-space-xxl bg-surface" id="services">
+                <div class="max-w-7xl mx-auto px-gutter flex flex-col gap-space-xl">
+                    <!-- Section Title & Narrative -->
+                    <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+                        <div class="flex flex-col gap-space-xs max-w-2xl">
+                            <span
+                                class="font-label-md text-label-md text-primary uppercase tracking-widest font-bold">Curated
+                                Salon &amp; Spa Menu</span>
+                            <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Elegance
+                                Perfected by Masters</h2>
+                            <p class="font-body-md text-body-md text-on-surface-variant">
+                                From heirloom bridal transformations to restorative skin therapies and precision
+                                coloring, every treatment is an ode to refined wellness.
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-space-xs">
+                            <span class="font-label-sm text-label-sm uppercase text-on-surface-variant">11 Signature
+                                Services</span>
+                        </div>
+                    </div>
+                    <!-- Services Grid (11 Services) -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-space-md">
+                        <!-- Service 1: Bridal Makeup (Feature Hero Card) -->
+                        <div
+                            class="lg:col-span-2 bg-surface-container-low rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row group">
+                            <div
+                                class="md:w-1/2 aspect-square md:aspect-auto relative overflow-hidden bg-surface-container">
+                                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    data-alt="Macro portrait of a bride receiving delicate highlighter powder on high cheekbones with a fluffy cosmetic brush in a sunlit Parisian studio setting, soft peach and blush tones, warm gentle lens flare."
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWPYC9TOyEIKmAh4AIVPmod_8vwHM1xRFdDLmNSKXsgnlWUUZdL53nazXuSLoQyaFAgOAvc5RMBk8RORtpHAL5FYaKzTiXNp9ssGu3PqBzjAZ0pfHVMmxYv3mb96q66lA_iI7dCzXZVDMrKrNHNk_jKiuOwVpq6LjjJKxfFj6KGdZFt4u5VAwYlphxpZVquVY0vDJ0AY00YghrxgK17aQe714T29G0rGWPKblvzeiM">
+                                <div
+                                    class="absolute top-3 left-3 bg-primary text-on-primary font-label-sm text-label-sm px-space-sm py-1 rounded-full uppercase tracking-wider">
+                                    Most Requested
+                                </div>
+                            </div>
+                            <div class="md:w-1/2 p-space-lg flex flex-col justify-between gap-space-md">
+                                <div class="flex flex-col gap-space-xs">
+                                    <div class="flex items-center justify-between">
+                                        <span
+                                            class="font-label-sm text-label-sm text-primary uppercase tracking-wider">Heirloom
+                                            Artistry</span>
+                                        <span class="font-label-sm text-label-sm text-on-surface-variant">180 min</span>
+                                    </div>
+                                    <h3 class="font-headline-sm text-headline-sm text-on-surface">Bridal Makeup
+                                        Masterclass</h3>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                        Full-coverage HD luminous airbrush makeup, preview consultation trial session,
+                                        false lash architecture, and regal dupatta/jewelry pinning.
+                                    </p>
+                                </div>
+                                <div class="flex items-center justify-between pt-space-sm">
+                                    <span class="font-headline-sm text-headline-sm text-on-surface">From Rs. 18,000</span>
+                                    <button
+                                        class="px-space-md py-space-xs bg-primary text-on-primary font-label-md text-label-md rounded-full hover:bg-on-primary-fixed-variant transition-colors flex items-center gap-space-xs"
+                                        onclick="prefillBooking('Bridal Makeup', 18000)">
+                                        <span>Select</span>
+                                        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Service 2: Party Makeup -->
+                        <div
+                            class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between gap-space-md group">
+                            <div class="flex flex-col gap-space-sm">
+                                <div class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-container">
+                                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                        data-alt="Evening glam party makeup featuring soft smokey bronze eyelids, illuminated inner corners, defined arched eyebrows, and glossy berry lips in soft editorial studio lighting."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVPmluiFeMYzT4Rh9CozYa82eow5G_TNzkGBExE8_VyhlKqw0l7ADoo0TdI3LjR33q23wYSX1twRSzhRSHpoSyBAdec2PDuKqclP1ajiqMA-raWrn7DgU38a7FUlODC6YrdGhPG4BuibIQVEBvv0Ly0dHLZaltxLZwEKumQHDX2bw2zZkWyL4tIDV7ngyfoWH8cdWbBJglKPxnWN9xu3xLmg3r1YgT28-4WZ7VV1Lo">
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <h4 class="font-headline-sm text-headline-sm text-on-surface">Party Makeup</h4>
+                                    <span class="font-label-sm text-label-sm text-on-surface-variant">60 min</span>
+                                </div>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                    Luminous evening celebration makeup harmonized seamlessly to your couture wardrobe
+                                    and lighting ambiance.
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-between pt-space-xs">
+                                <span class="font-headline-sm text-headline-sm text-on-surface">From Rs. 6,500</span>
+                                <button
+                                    class="px-space-md py-space-xs bg-surface-container text-on-surface font-label-md text-label-md rounded-full hover:bg-surface-container-high transition-colors"
+                                    onclick="prefillBooking('Party Makeup', 6500)">Select</button>
+                            </div>
+                        </div>
+                        <!-- Service 3: Haircut -->
+                        <div
+                            class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between gap-space-md group">
+                            <div class="flex flex-col gap-space-sm">
+                                <div class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-container">
+                                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                        data-alt="Hairstylist gently trimming face-framing curtain bangs on silky brunette tresses in a high-end minimalist salon with marble countertops and warm pendant lights."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQVwsXazDzl6JcBILw1S-nEmHCcO3fdZW0BHTS3mC-nGVzwHWFou4tlchWcFGjxNnOUA3jMEVQ8b6zyUyC0uukEtJhBkK4ki_FyddhxVPWB8Qg1LGB-m_80L07Aisa8JfZ6c4dlgFycNhjF4zdEQyMmoeplqpNhOOzbMQwjkrCIKppG6JjVdEawvx4zh8ixpE4D15HU2bALLHfP0QP0zA1VHBdLTA5k0zLLTUz2mUP">
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <h4 class="font-headline-sm text-headline-sm text-on-surface">Haircut &amp; Cut</h4>
+                                    <span class="font-label-sm text-label-sm text-on-surface-variant">45 min</span>
+                                </div>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                    Bespoke dry and wet precision sectioning, botanical lavender wash, scalp
+                                    acupressure, and signature blowout.
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-between pt-space-xs">
+                                <span class="font-headline-sm text-headline-sm text-on-surface">From Rs. 3,500</span>
+                                <button
+                                    class="px-space-md py-space-xs bg-surface-container text-on-surface font-label-md text-label-md rounded-full hover:bg-surface-container-high transition-colors"
+                                    onclick="prefillBooking('Haircut', 3500)">Select</button>
+                            </div>
+                        </div>
+                        <!-- Service 4: Hair Color -->
+                        <div
+                            class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between gap-space-md group">
+                            <div class="flex flex-col gap-space-sm">
+                                <div class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-container">
+                                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                        data-alt="Lustrous caramel and rich chocolate balayage waves flowing over shoulders with mirror-like shine in a soft ambient studio setting."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQVwsXazDzl6JcBILw1S-nEmHCcO3fdZW0BHTS3mC-nGVzwHWFou4tlchWcFGjxNnOUA3jMEVQ8b6zyUyC0uukEtJhBkK4ki_FyddhxVPWB8Qg1LGB-m_80L07Aisa8JfZ6c4dlgFycNhjF4zdEQyMmoeplqpNhOOzbMQwjkrCIKppG6JjVdEawvx4zh8ixpE4D15HU2bALLHfP0QP0zA1VHBdLTA5k0zLLTUz2mUP">
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <h4 class="font-headline-sm text-headline-sm text-on-surface">Hair Color</h4>
+                                    <span class="font-label-sm text-label-sm text-on-surface-variant">120 min</span>
+                                </div>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                    Full dimensional coloring, ammonia-free French balayage, gloss toner, and
+                                    bond-building moisture seal.
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-between pt-space-xs">
+                                <span class="font-headline-sm text-headline-sm text-on-surface">From Rs. 9,500</span>
+                                <button
+                                    class="px-space-md py-space-xs bg-surface-container text-on-surface font-label-md text-label-md rounded-full hover:bg-surface-container-high transition-colors"
+                                    onclick="prefillBooking('Hair Color', 9500)">Select</button>
+                            </div>
+                        </div>
+                        <!-- Service 5: Streaking -->
+                        <div
+                            class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between gap-space-md group">
+                            <div class="flex flex-col gap-space-sm">
+                                <div class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-container">
+                                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                        data-alt="Micro-foil highlights placed precisely through blonde and ash honey hair sections by master colorist with salon tint bowl and brush visible in foreground."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYPMoTPYz9k3faDOT6nvdLiQOqNoJq7Bk4FbCXkZXN2D_D16QrxPFjCaV77Ceqpo4HTehRWeby-i0BVdq6r7SALLd_5L0TKKyL_hIsJQKC7Nt-k2Rf4rBViZG2EKeHgCJUJah2l4Njz-oBhIKigc5TMfqx4MORPAnqREkObV5qno6NuCF0-xDPKJi5uLbOtYWc_ut14k2VbjxRyl0UZEfxJQv4124puHLKCVwlvPgM">
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <h4 class="font-headline-sm text-headline-sm text-on-surface">Streaking &amp; Foils
+                                    </h4>
+                                    <span class="font-label-sm text-label-sm text-on-surface-variant">90 min</span>
+                                </div>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                    Delicate baby-lights, face-framing money pieces, and soft crown contouring for
+                                    sun-drenched multidimensional lift.
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-between pt-space-xs">
+                                <span class="font-headline-sm text-headline-sm text-on-surface">From Rs. 8,000</span>
+                                <button
+                                    class="px-space-md py-space-xs bg-surface-container text-on-surface font-label-md text-label-md rounded-full hover:bg-surface-container-high transition-colors"
+                                    onclick="prefillBooking('Streaking', 8000)">Select</button>
+                            </div>
+                        </div>
+                        <!-- Service 6: Mehendi -->
+                        <div
+                            class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between gap-space-md group">
+                            <div class="flex flex-col gap-space-sm">
+                                <div class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-container">
+                                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                        data-alt="Intricate bridal henna mehendi patterns painted on hands and wrists with rich floral motifs, paisleys, and geometric lace lines, natural dark henna stain against clean ivory fabric."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpICzZV7aftJndYFnH59i_uxBVoN1_V99ATjmJWaHzmYqyX6uHHYETndwpsjSNFIpKuYelwUcyiibIi1szJLFcaNS6Ohp_bRxbQ0uoKwTCwZkNriFfzH9uHQ_81OK6kqzIUbO-QcV7NnbnfVqbuKZwPWnCjyTE8uRjVBdeGpVtRrTFgse0B66J1NLNnhS_-hlCAufuZ-x5YLHmScflH0W0d7rhJQ7ufA8gAFNb_qCl">
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <h4 class="font-headline-sm text-headline-sm text-on-surface">Mehendi Artistry</h4>
+                                    <span class="font-label-sm text-label-sm text-on-surface-variant">60 min</span>
+                                </div>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                    Organic eucalyptus henna paste hand-drawn in exquisite Indian, Arabic, or modern
+                                    bridal silhouette designs.
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-between pt-space-xs">
+                                <span class="font-headline-sm text-headline-sm text-on-surface">From Rs. 5,000</span>
+                                <button
+                                    class="px-space-md py-space-xs bg-surface-container text-on-surface font-label-md text-label-md rounded-full hover:bg-surface-container-high transition-colors"
+                                    onclick="prefillBooking('Mehendi', 5000)">Select</button>
+                            </div>
+                        </div>
+                        <!-- Service 7: Facial -->
+                        <div
+                            class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between gap-space-md group">
+                            <div class="flex flex-col gap-space-sm">
+                                <div class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-container">
+                                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                        data-alt="Serene spa client enjoying an organic botanical facial with chilled rose quartz roller massage on cheekbones, surrounded by soft steam and delicate flower petals."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB03JYaQPkW-0jD2ftKXK-78QTLIDmv9ajuSkugnZJgpEkBpssU8U6n14efUJZSXFFsFaJm1kUG6XgO-xRgqWMMhn218IDJ3YJSk2aIWO3SGzYOpMXModofu1-PerbFIgXoR2d3Ap24w00DSrXV95XtK9-HozUCWngHRzlP0g9SYMxuyAC5XKMUXpHBy5C57kYVUoprzJ_Chz1sLNGLkSsVbN-J-x7AQziBnJ65GTxw">
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <h4 class="font-headline-sm text-headline-sm text-on-surface">Restorative Facial
+                                    </h4>
+                                    <span class="font-label-sm text-label-sm text-on-surface-variant">75 min</span>
+                                </div>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                    Deep enzymatic exfoliation, botanical serum infusion, lymphatic drainage, and
+                                    cryo-sculpting rose quartz ritual.
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-between pt-space-xs">
+                                <span class="font-headline-sm text-headline-sm text-on-surface">From Rs. 5,500</span>
+                                <button
+                                    class="px-space-md py-space-xs bg-surface-container text-on-surface font-label-md text-label-md rounded-full hover:bg-surface-container-high transition-colors"
+                                    onclick="prefillBooking('Facial', 5500)">Select</button>
+                            </div>
+                        </div>
+                        <!-- Service 8: Hair Styling & Blowout -->
+                        <div
+                            class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between gap-space-md group">
+                            <div class="flex flex-col gap-space-sm">
+                                <div class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-container">
+                                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                        data-alt="Hair stylist creating voluminous classic Hollywood waves using a professional ceramic barrel curling wand, warm backlighting catching airy texture."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcAXX3-KJ78H-8icGo_c-Tq1g3FZLqvD0W0y23IjZvtmHAWhXIFM8KM3hgYmcabWcHB-Caa3rzgUqko_Z02gqlU-zN2M7AQSHAMTxs2WKSDag9aN7_JHF0GHvkiwHX2l9JCovtazwli88CB3kWC1qobSVgYVdALlDq1VcAX9cRwlfSErSb9mWcqC3qmPa1tZX-9b9H-Ew2gQKFzr7A4cR9byogz-fkZAQWRyYpn7L2">
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <h4 class="font-headline-sm text-headline-sm text-on-surface">Blowout &amp; Waves
+                                    </h4>
+                                    <span class="font-label-sm text-label-sm text-on-surface-variant">45 min</span>
+                                </div>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                    Bouncy blowout, romantic textured chignons, or cascading Hollywood waves prepared
+                                    with anti-humidity thermal seal.
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-between pt-space-xs">
+                                <span class="font-headline-sm text-headline-sm text-on-surface">From Rs. 4,000</span>
+                                <button
+                                    class="px-space-md py-space-xs bg-surface-container text-on-surface font-label-md text-label-md rounded-full hover:bg-surface-container-high transition-colors"
+                                    onclick="prefillBooking('Hair Styling &amp; Blowout', 4000)">Select</button>
+                            </div>
+                        </div>
+                        <!-- Service 9: Manicure & Pedicure -->
+                        <div
+                            class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between gap-space-md group">
+                            <div class="flex flex-col gap-space-sm">
+                                <div class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-container">
+                                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                        data-alt="Hands resting in a warm rosewater brass bowl filled with floating pink rose petals and essential oils during a luxury spa manicure treatment."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVo4JPo8W7N-YZKzo4MUZmiP_xhLzDKWR8Jux9iVpzOfFIm8TFdCs-nVw0-THH0_n7kplqKHhUr-c25Z9_ue9675HFtS3jmKwZkGWSw8xG9GUUlfwcIbk5Qo0jsDpi_Dj0pAUlGnZNoNK5lCCq2er5pgg3gQrc9H7PjoxEFozrCv8ytOu9gOSLD12j0WK1EvdSGrKEGqeAkw-axiTJjaX2i94olxmENW9SuZR-BvJx">
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <h4 class="font-headline-sm text-headline-sm text-on-surface">Mani &amp; Pedi Spa
+                                    </h4>
+                                    <span class="font-label-sm text-label-sm text-on-surface-variant">60 min</span>
+                                </div>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                    Damask rose petal soak, botanical brown sugar scrub, cuticle restoration, and
+                                    enduring chip-free gel polish.
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-between pt-space-xs">
+                                <span class="font-headline-sm text-headline-sm text-on-surface">From Rs. 4,500</span>
+                                <button
+                                    class="px-space-md py-space-xs bg-surface-container text-on-surface font-label-md text-label-md rounded-full hover:bg-surface-container-high transition-colors"
+                                    onclick="prefillBooking('Manicure &amp; Pedicure', 4500)">Select</button>
+                            </div>
+                        </div>
+                        <!-- Service 10: Nail Art -->
+                        <div
+                            class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between gap-space-md group">
+                            <div class="flex flex-col gap-space-sm">
+                                <div class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-container">
+                                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                        data-alt="Close up of impeccably manicured almond nails painted with glazed donut chrome finish and delicate pearl embellishments on neutral blush backdrop."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEhat2_Ka_nkw5rTV5APOJjoite68O2nOY7au9lct4Czt55YBjivxGwULor9GtdzfFpcyiuMLN7rFdOdB2Y4SIoGAvMQ__5X9uK9D16w087VPUzcG5ditd-nHuUB99pC0GY08hHRO3iBYISVRix4rh6slpBMoUYEOoAy_6Pwtk8dvrVgcujDECLQh1dQ77KNnWiz_QnD8qgDx9G_DajmTOaxDXTriW_uS0Xh9h8VYE">
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <h4 class="font-headline-sm text-headline-sm text-on-surface">Couture Nail Art</h4>
+                                    <span class="font-label-sm text-label-sm text-on-surface-variant">45 min</span>
+                                </div>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                    Custom hand-painted French ombré, chrome glaze, botanical micro-florals, or bridal
+                                    Swarovski crystal insets.
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-between pt-space-xs">
+                                <span class="font-headline-sm text-headline-sm text-on-surface">From Rs. 3,000</span>
+                                <button
+                                    class="px-space-md py-space-xs bg-surface-container text-on-surface font-label-md text-label-md rounded-full hover:bg-surface-container-high transition-colors"
+                                    onclick="prefillBooking('Nail Art', 3000)">Select</button>
+                            </div>
+                        </div>
+                        <!-- Service 11: Skin Polishing & Waxing -->
+                        <div
+                            class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between gap-space-md group">
+                            <div class="flex flex-col gap-space-sm">
+                                <div class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-container">
+                                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                        data-alt="Luxury body spa treatment setup with golden organic honey wax, ceramic bowl of raw brown sugar scrub, and fragrant jasmine towels on warm teak tray."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBi3rg37AXTwnM_EhuKMGzacAgj-NrTQpiUf4mfrQrdgfWBcorNzpiRStIGJSfxcK2bgdAJ50BxDLXyiayH_rRXoxP463HGFoGYOiGsrqYOPeKT19ru-X1VrWFnOQHrHoHi4FR6ccYGXFSRu9EqWAbfdJ-cgNc8W2--iZ_FR_EL1ab78Vxmr7UqCyKuGew23TQ9klfqVEHRgfTgWkPozkHrWkQDuKPiZPcS5ByuB2IL">
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <h4 class="font-headline-sm text-headline-sm text-on-surface">Polish &amp; Honey Wax
+                                    </h4>
+                                    <span class="font-label-sm text-label-sm text-on-surface-variant">60 min</span>
+                                </div>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                    Full-body apricot walnut polishing polish followed by ultra-gentle strip honey
+                                    waxing with soothing aloe mist.
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-between pt-space-xs">
+                                <span class="font-headline-sm text-headline-sm text-on-surface">From Rs. 6,000</span>
+                                <button
+                                    class="px-space-md py-space-xs bg-surface-container text-on-surface font-label-md text-label-md rounded-full hover:bg-surface-container-high transition-colors"
+                                    onclick="prefillBooking('Skin Polishing &amp; Waxing', 6000)">Select</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- DUAL-MODE BOOKING ENGINE -->
+            <section class="w-full py-space-xxl bg-surface-container-low" id="booking">
+                <div class="max-w-7xl mx-auto px-gutter flex flex-col gap-space-xl">
+                    <!-- Section Heading -->
+                    <div class="text-center max-w-2xl mx-auto flex flex-col items-center gap-space-xs">
+                        <span
+                            class="font-label-md text-label-md text-primary uppercase tracking-widest font-bold">Reserve
+                            Your Experience</span>
+                        <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Atelier Studio or
+                            Doorstep Luxury</h2>
+                        <p class="font-body-md text-body-md text-on-surface-variant">
+                            Select between our serene private salon suite or request our senior aesthetic team directly
+                            to your home or bridal suite.
+                        </p>
+                        <!-- Mode Toggle Tabs -->
+                        <div class="inline-flex p-1.5 bg-surface-container-lowest rounded-full shadow-sm mt-space-sm">
+                            <button
+                                class="px-space-lg py-space-xs rounded-full font-label-md text-label-md transition-all duration-300 bg-primary text-on-primary shadow-sm flex items-center gap-space-xs"
+                                id="tab-salon-btn" onclick="switchBookingMode('salon')">
+                                <span class="material-symbols-outlined text-[18px]">storefront</span>
+                                <span>Online Salon Booking</span>
+                            </button>
+                            <button
+                                class="px-space-lg py-space-xs rounded-full font-label-md text-label-md transition-all duration-300 text-on-surface-variant hover:text-primary flex items-center gap-space-xs"
+                                id="tab-home-btn" onclick="switchBookingMode('home')">
+                                <span class="material-symbols-outlined text-[18px]">home</span>
+                                <span>Home Service Booking</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Booking Interactive Grid -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+                        <!-- Left: Form Stepper -->
+                        <div
+                            class="lg:col-span-8 bg-surface-container-lowest p-space-lg md:p-space-xl rounded-2xl shadow-[0_8px_24px_-4px_rgba(58,42,45,0.06)] flex flex-col gap-space-lg">
+                            <!-- Step 1: Select Service -->
+                            <div class="flex flex-col gap-space-sm">
+                                <div class="flex items-center justify-between">
+                                    <span
+                                        class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-bold">Step
+                                        1 • Select Treatment</span>
+                                    <span class="font-body-sm text-body-sm text-on-surface-variant">Click to
+                                        choose</span>
+                                </div>
+                                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-space-xs"
+                                    id="service-pills-container">
+                                    <!-- Service Chips populated via JS / HTML -->
+                                    <button
+                                        class="service-chip active text-left p-space-sm rounded-xl bg-primary text-on-primary font-label-sm text-label-sm transition-all shadow-sm"
+                                        onclick="selectServiceItem('Bridal Makeup', 18000, '180 min')" type="button">
+                                        Bridal Makeup
+                                    </button>
+                                    <button
+                                        class="service-chip text-left p-space-sm rounded-xl bg-surface-container text-on-surface font-label-sm text-label-sm transition-all hover:bg-surface-container-high"
+                                        onclick="selectServiceItem('Party Makeup', 6500, '60 min')" type="button">
+                                        Party Makeup
+                                    </button>
+                                    <button
+                                        class="service-chip text-left p-space-sm rounded-xl bg-surface-container text-on-surface font-label-sm text-label-sm transition-all hover:bg-surface-container-high"
+                                        onclick="selectServiceItem('Haircut', 3500, '45 min')" type="button">
+                                        Haircut &amp; Cut
+                                    </button>
+                                    <button
+                                        class="service-chip text-left p-space-sm rounded-xl bg-surface-container text-on-surface font-label-sm text-label-sm transition-all hover:bg-surface-container-high"
+                                        onclick="selectServiceItem('Hair Color', 9500, '120 min')" type="button">
+                                        Hair Color
+                                    </button>
+                                    <button
+                                        class="service-chip text-left p-space-sm rounded-xl bg-surface-container text-on-surface font-label-sm text-label-sm transition-all hover:bg-surface-container-high"
+                                        onclick="selectServiceItem('Streaking', 8000, '90 min')" type="button">
+                                        Streaking
+                                    </button>
+                                    <button
+                                        class="service-chip text-left p-space-sm rounded-xl bg-surface-container text-on-surface font-label-sm text-label-sm transition-all hover:bg-surface-container-high"
+                                        onclick="selectServiceItem('Mehendi', 5000, '60 min')" type="button">
+                                        Mehendi
+                                    </button>
+                                    <button
+                                        class="service-chip text-left p-space-sm rounded-xl bg-surface-container text-on-surface font-label-sm text-label-sm transition-all hover:bg-surface-container-high"
+                                        onclick="selectServiceItem('Facial', 5500, '75 min')" type="button">
+                                        Facial Spa
+                                    </button>
+                                    <button
+                                        class="service-chip text-left p-space-sm rounded-xl bg-surface-container text-on-surface font-label-sm text-label-sm transition-all hover:bg-surface-container-high"
+                                        onclick="selectServiceItem('Hair Styling &amp; Blowout', 4000, '45 min')"
+                                        type="button">
+                                        Styling &amp; Blowout
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Step 2: Date & Time Picker -->
+                            <div class="flex flex-col gap-space-sm pt-space-xs">
+                                <span
+                                    class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-bold">Step
+                                    2 • Date &amp; Preferred Time Slot</span>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+                                    <div>
+                                        <label
+                                            class="block font-label-sm text-label-sm text-on-surface-variant uppercase mb-1">Appointment
+                                            Date</label>
+                                        <input
+                                            class="w-full px-space-md py-space-sm bg-surface rounded-xl font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-1 focus:ring-primary shadow-sm"
+                                            id="booking-date" type="date" value="2025-05-15">
+                                    </div>
+                                    <div>
+                                        <label
+                                            class="block font-label-sm text-label-sm text-on-surface-variant uppercase mb-1">Time
+                                            Slot</label>
+                                        <div class="grid grid-cols-3 gap-space-xs">
+                                            <button
+                                                class="time-slot px-space-xs py-space-sm bg-primary text-on-primary rounded-xl font-label-sm text-label-sm text-center"
+                                                onclick="selectTimeSlot(this, '10:00 AM')" type="button">10:00
+                                                AM</button>
+                                            <button
+                                                class="time-slot px-space-xs py-space-sm bg-surface-container text-on-surface rounded-xl font-label-sm text-label-sm text-center hover:bg-surface-container-high"
+                                                onclick="selectTimeSlot(this, '02:00 PM')" type="button">02:00
+                                                PM</button>
+                                            <button
+                                                class="time-slot px-space-xs py-space-sm bg-surface-container text-on-surface rounded-xl font-label-sm text-label-sm text-center hover:bg-surface-container-high"
+                                                onclick="selectTimeSlot(this, '05:30 PM')" type="button">05:30
+                                                PM</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Step 3: Artist Tier -->
+                            <div class="flex flex-col gap-space-sm pt-space-xs">
+                                <span
+                                    class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-bold">Step
+                                    3 • Stylist Tier</span>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
+                                    <label
+                                        class="p-space-sm rounded-xl bg-surface flex items-start gap-space-sm cursor-pointer shadow-sm">
+                                        <input checked="" class="mt-1 accent-primary" name="artist_tier"
+                                            onchange="updateTier('Lead Bridal Artist', 0)" type="radio">
+                                        <div>
+                                            <span
+                                                class="font-label-md text-label-md text-on-surface block font-bold">Lead
+                                                Bridal Artist</span>
+                                            <span class="font-body-sm text-body-sm text-on-surface-variant">Standard
+                                                Rate</span>
+                                        </div>
+                                    </label>
+                                    <label
+                                        class="p-space-sm rounded-xl bg-surface flex items-start gap-space-sm cursor-pointer shadow-sm">
+                                        <input class="mt-1 accent-primary" name="artist_tier"
+                                            onchange="updateTier('Master Artistic Director', 3500)" type="radio">
+                                        <div>
+                                            <span
+                                                class="font-label-md text-label-md text-on-surface block font-bold">Master
+                                                Director</span>
+                                            <span class="font-body-sm text-body-sm text-on-surface-variant">+Rs. 3,500
+                                                Surcharge</span>
+                                        </div>
+                                    </label>
+                                    <label
+                                        class="p-space-sm rounded-xl bg-surface flex items-start gap-space-sm cursor-pointer shadow-sm">
+                                        <input class="mt-1 accent-primary" name="artist_tier"
+                                            onchange="updateTier('Senior Hair Specialist', 1500)" type="radio">
+                                        <div>
+                                            <span
+                                                class="font-label-md text-label-md text-on-surface block font-bold">Senior
+                                                Specialist</span>
+                                            <span class="font-body-sm text-body-sm text-on-surface-variant">+Rs. 1,500
+                                                Surcharge</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- Step 4 (Conditional): Home Service Fields -->
+                            <div class="hidden flex-col gap-space-sm pt-space-xs" id="home-service-fields">
+                                <span
+                                    class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-bold">Step
+                                    4 • Home Concierge Details</span>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+                                    <div class="sm:col-span-2">
+                                        <label
+                                            class="block font-label-sm text-label-sm text-on-surface-variant uppercase mb-1">Destination
+                                            Address / Suite</label>
+                                        <input
+                                            class="w-full px-space-md py-space-sm bg-surface rounded-xl font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-1 focus:ring-primary shadow-sm"
+                                            id="home-address"
+                                            placeholder="Villa 14, Orchid Crescent, West Hills" type="text">
+                                    </div>
+                                    <div>
+                                        <label
+                                            class="block font-label-sm text-label-sm text-on-surface-variant uppercase mb-1">City
+                                            / Region</label>
+                                        <input
+                                            class="w-full px-space-md py-space-sm bg-surface rounded-xl font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-1 focus:ring-primary shadow-sm"
+                                            id="home-city"
+                                            placeholder="Metropolitan Core" type="text">
+                                    </div>
+                                    <div>
+                                        <label
+                                            class="block font-label-sm text-label-sm text-on-surface-variant uppercase mb-1">Therapist
+                                            Notes (e.g. natural light room)</label>
+                                        <input
+                                            class="w-full px-space-md py-space-sm bg-surface rounded-xl font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-1 focus:ring-primary shadow-sm"
+                                            id="home-notes"
+                                            placeholder="Please bring ring light for bridal trial" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Step 5: Contact Details -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-space-xs">
+                                <div>
+                                    <label
+                                        class="block font-label-sm text-label-sm text-on-surface-variant uppercase mb-1">Full
+                                        Name</label>
+                                    <input
+                                        class="w-full px-space-md py-space-sm bg-surface rounded-xl font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-1 focus:ring-primary shadow-sm"
+                                        id="booking-name"
+                                        placeholder="Sophia Hawthorne" type="text">
+                                </div>
+                                <div>
+                                    <label
+                                        class="block font-label-sm text-label-sm text-on-surface-variant uppercase mb-1">Phone
+                                        / WhatsApp</label>
+                                    <input
+                                        class="w-full px-space-md py-space-sm bg-surface rounded-xl font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-1 focus:ring-primary shadow-sm"
+                                        id="booking-phone"
+                                        placeholder="+1 (555) 019-2834" type="tel">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Right: Live Summary Receipt Card -->
+                        <div
+                            class="lg:col-span-4 sticky top-28 bg-surface-container-highest p-space-lg rounded-2xl shadow-[0_12px_32px_-6px_rgba(58,42,45,0.08)] flex flex-col gap-space-md">
+                            <div class="flex items-center justify-between">
+                                <span class="font-headline-sm text-headline-sm text-on-surface">Booking Summary</span>
+                                <span
+                                    class="font-label-sm text-label-sm px-space-sm py-0.5 rounded-full bg-surface-container text-primary uppercase font-bold"
+                                    id="summary-mode-badge">Salon Studio</span>
+                            </div>
+                            <div class="flex flex-col gap-space-sm text-on-surface-variant font-body-sm text-body-sm">
+                                <div class="flex justify-between items-center py-1">
+                                    <span>Service Selected:</span>
+                                    <span class="font-bold text-on-surface" id="summary-service-name">Bridal
+                                        Makeup</span>
+                                </div>
+                                <div class="flex justify-between items-center py-1">
+                                    <span>Duration:</span>
+                                    <span class="font-bold text-on-surface" id="summary-service-duration">180 min</span>
+                                </div>
+                                <div class="flex justify-between items-center py-1">
+                                    <span>Stylist:</span>
+                                    <span class="font-bold text-on-surface" id="summary-tier-name">Lead Bridal
+                                        Artist</span>
+                                </div>
+                                <div class="flex justify-between items-center py-1">
+                                    <span>Slot:</span>
+                                    <span class="font-bold text-on-surface" id="summary-slot">10:00 AM</span>
+                                </div>
+                                <div class="flex justify-between items-center py-1" id="summary-travel-fee-row"
+                                    style="display: none;">
+                                    <span>Home Travel &amp; Kit Dispatch:</span>
+                                    <span class="font-bold text-primary">Rs. 2,000</span>
+                                </div>
+                            </div>
+                            <div class="pt-space-sm flex justify-between items-baseline">
+                                <span class="font-label-lg text-label-lg text-on-surface uppercase font-bold">Total
+                                    Estimate</span>
+                                <span class="font-headline-md text-headline-md text-primary"
+                                    id="summary-total-price">Rs. 18,000</span>
+                            </div>
+                            <button
+                                class="w-full py-space-sm bg-primary text-on-primary font-label-lg text-label-lg rounded-full hover:bg-on-primary-fixed-variant transition-colors shadow-md flex items-center justify-center gap-space-xs"
+                                onclick="confirmBooking()" type="button">
+                                <span class="material-symbols-outlined text-[18px]">check_circle</span>
+                                <span>Confirm &amp; Book Appointment</span>
+                            </button>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant text-center">
+                                No instant prepayment required. 24-hour free cancellation policy.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- MAKEUP & COSMETICS STORE SHOWCASE (8 PRODUCTS) -->
+            <section class="w-full py-space-xxl bg-surface relative" id="products">
+                <div class="max-w-7xl mx-auto px-gutter flex flex-col gap-space-xl">
+                    <!-- Section Header -->
+                    <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+                        <div class="flex flex-col gap-space-xs max-w-2xl">
+                            <span
+                                class="font-label-md text-label-md text-primary uppercase tracking-widest font-bold">Beauty
+                                &amp; Makeup Store</span>
+                            <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Angels
+                                Signature Cosmetics</h2>
+                            <p class="font-body-md text-body-md text-on-surface-variant">
+                                Clean, cruelty-free, high-pigment formulas created by our lead bridal artists for
+                                lasting editorial perfection.
+                            </p>
+                        </div>
+                        <!-- Quick Cart Status Floating Trigger -->
+                        <div
+                            class="flex items-center gap-space-sm bg-surface-container px-space-md py-space-xs rounded-full">
+                            <span class="material-symbols-outlined text-primary text-[20px]">shopping_bag</span>
+                            <span class="font-label-sm text-label-sm text-on-surface font-bold">Cart:</span>
+                            <span class="font-label-sm text-label-sm text-primary font-bold" id="cart-item-count">0
+                                Items</span>
+                            <span class="text-on-surface-variant font-label-sm text-label-sm">•</span>
+                            <span class="font-label-sm text-label-sm text-on-surface font-bold"
+                                id="cart-subtotal">Rs. 0</span>
+                        </div>
+                    </div>
+                    <!-- Products Grid (8 Items) -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+                        <!-- Product 1 -->
+                        <div
+                            class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between gap-space-sm group">
+                            <div>
+                                <div
+                                    class="w-full aspect-square rounded-xl overflow-hidden bg-surface-container-low mb-space-sm relative">
+                                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                        data-alt="Frosted glass bottle of liquid matte foundation with gold embossed pump dispenser placed on a warm ivory travertine pedestal with soft shadows."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzUog_vCsTiwwLLceWkDNEzved4cz6F-hbvrP3AeTZZ_QCzkcuS3BRfTVpNEm0P5-maPIiewdSVSAeCpPNvWDxjY13SUqtPYUcY0z_iUurM871UOoCgA8BA-iESalxKDrjz8AD6jCSCDuLyo4dRJAQz-wffCFzwQa9OlaJQwks_2fElgERKmKSyxtNs7u5asWHNLPL8lV9iNo1oJw_awdDmaUALJPNzogeAtyNuSiG">
+                                    <span
+                                        class="absolute top-2 left-2 bg-surface/90 text-on-surface font-label-sm text-label-sm px-2 py-0.5 rounded-full">Bestseller</span>
+                                </div>
+                                <div class="flex items-center gap-1 text-primary mb-1">
+                                    <span class="material-symbols-outlined text-[16px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="font-label-sm text-label-sm text-on-surface font-bold">4.9</span>
+                                    <span class="font-body-sm text-body-sm text-on-surface-variant">(420)</span>
+                                </div>
+                                <h4 class="font-headline-sm text-headline-sm text-on-surface text-[18px]">Velvet Matte
+                                    Foundation</h4>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">Weightless 24h breathable
+                                    coverage in 24 skin-true shades.</p>
+                            </div>
+                            <div class="flex items-center justify-between pt-space-xs">
+                                <span class="font-headline-sm text-headline-sm text-on-surface">Rs. 3,800</span>
+                                <button
+                                    class="px-space-md py-space-xs bg-primary text-on-primary font-label-sm text-label-sm rounded-full hover:bg-on-primary-fixed-variant transition-colors flex items-center gap-1"
+                                    onclick="addToCart('Velvet Matte Foundation', 3800)">
+                                    <span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+                                    <span>Add</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Product 2 -->
+                        <div
+                            class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between gap-space-sm group">
+                            <div>
+                                <div
+                                    class="w-full aspect-square rounded-xl overflow-hidden bg-surface-container-low mb-space-sm">
+                                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                        data-alt="Trio of luxury matte lipsticks in dusty rose, warm nude, and soft berry shades housed in brushed rose gold tubes on silk blush cloth."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFK43DuzF4YRATscp-r0VT_arvF1Fg70pTg1-emcUYFXTLkQ0f-jn5NALZ8o5vOd6S8StxGke5NoETyOjBbm_afreAlQhIS3CvjUYTg3UR6n_SC_j9fdO-UXlGyHTzSWXNIJpGRu69VEGVGwtO20eA7EJ37mBQfRQ1MoJBat5nIk7EmmYiyolsqyHM7cyt881TrmtIHyJoY0hCoxkk0eIOGiSie660xu7mYztF8ziK">
+                                </div>
+                                <div class="flex items-center gap-1 text-primary mb-1">
+                                    <span class="material-symbols-outlined text-[16px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="font-label-sm text-label-sm text-on-surface font-bold">5.0</span>
+                                    <span class="font-body-sm text-body-sm text-on-surface-variant">(189)</span>
+                                </div>
+                                <h4 class="font-headline-sm text-headline-sm text-on-surface text-[18px]">Soft Rose
+                                    Lipstick Trio</h4>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">Velvety nude, petal rose,
+                                    and mauve tints enriched with camellia oil.</p>
+                            </div>
+                            <div class="flex items-center justify-between pt-space-xs">
+                                <span class="font-headline-sm text-headline-sm text-on-surface">Rs. 3,200</span>
+                                <button
+                                    class="px-space-md py-space-xs bg-primary text-on-primary font-label-sm text-label-sm rounded-full hover:bg-on-primary-fixed-variant transition-colors flex items-center gap-1"
+                                    onclick="addToCart('Soft Rose Lipstick Trio', 3200)">
+                                    <span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+                                    <span>Add</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Product 3 -->
+                        <div
+                            class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between gap-space-sm group">
+                            <div>
+                                <div
+                                    class="w-full aspect-square rounded-xl overflow-hidden bg-surface-container-low mb-space-sm">
+                                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                        data-alt="Opened high-end 18-shade eyeshadow palette displaying metallic champagnes, matte terracotta, warm plums, and shimmering bronze pans."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq3DQJ79qXZZHnpQY45kCRyEAOD3V3wwNxKO5RHQPI2-JkXvjcq-S0p7xk0oKrED4sjQOMJEUWErP4T59vvt4L1uc0hynyO5qcLR1zq-p2c-x33TW5LBI0AmdkbmQIge8dbYqRqnn13MzlRD4l6wZXxrfWkJKMg_8yEHUPuxvjqq7x4ldYGKm6WvSpFPCRWmUlgvXZ8VGLdOqszJVwNUqM6oM1AWouxexF9Zx3OA7x">
+                                </div>
+                                <div class="flex items-center gap-1 text-primary mb-1">
+                                    <span class="material-symbols-outlined text-[16px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="font-label-sm text-label-sm text-on-surface font-bold">4.8</span>
+                                    <span class="font-body-sm text-body-sm text-on-surface-variant">(310)</span>
+                                </div>
+                                <h4 class="font-headline-sm text-headline-sm text-on-surface text-[18px]">18-Shade
+                                    Eyeshadow Palette</h4>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">Warm blush neutrals, gilded
+                                    foils, and deep plum contours.</p>
+                            </div>
+                            <div class="flex items-center justify-between pt-space-xs">
+                                <span class="font-headline-sm text-headline-sm text-on-surface">Rs. 4,600</span>
+                                <button
+                                    class="px-space-md py-space-xs bg-primary text-on-primary font-label-sm text-label-sm rounded-full hover:bg-on-primary-fixed-variant transition-colors flex items-center gap-1"
+                                    onclick="addToCart('18-Shade Eyeshadow Palette', 4600)">
+                                    <span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+                                    <span>Add</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Product 4 -->
+                        <div
+                            class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between gap-space-sm group">
+                            <div>
+                                <div
+                                    class="w-full aspect-square rounded-xl overflow-hidden bg-surface-container-low mb-space-sm">
+                                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                        data-alt="Sleek burgundy metallic mascara tube with silicone wand showing fine separated bristles dipped in dark black formula."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRpMWPYc4UGsZBxJtNYSy167FcNDmNLFd6IpkMrm0B5bPWSK8AKtXAbZBC42Vt-nMIL0BH97nrvZGFL0tHEyaymu8pSOPhQEivYklIehimAXkA0PKK3f4xLv5ChAIscAPUq7yO1WIwRjoY2ZeFcFbEDpapNfj0lOTsNc1gaqrJ_xUgfAY0ti-SLEv7YfrKkN0BvX-zxibncSscPzLUpLkKJ8Aklrj7vksCb_H2ueJ_">
+                                </div>
+                                <div class="flex items-center gap-1 text-primary mb-1">
+                                    <span class="material-symbols-outlined text-[16px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="font-label-sm text-label-sm text-on-surface font-bold">4.9</span>
+                                    <span class="font-body-sm text-body-sm text-on-surface-variant">(95)</span>
+                                </div>
+                                <h4 class="font-headline-sm text-headline-sm text-on-surface text-[18px]">Lengthening
+                                    Lash Lift Mascara</h4>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">Smudge-proof botanical
+                                    peptide lash lift that holds curls 16 hours.</p>
+                            </div>
+                            <div class="flex items-center justify-between pt-space-xs">
+                                <span class="font-headline-sm text-headline-sm text-on-surface">Rs. 2,400</span>
+                                <button
+                                    class="px-space-md py-space-xs bg-primary text-on-primary font-label-sm text-label-sm rounded-full hover:bg-on-primary-fixed-variant transition-colors flex items-center gap-1"
+                                    onclick="addToCart('Lengthening Lash Lift Mascara', 2400)">
+                                    <span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+                                    <span>Add</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Product 5 -->
+                        <div
+                            class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between gap-space-sm group">
+                            <div>
+                                <div
+                                    class="w-full aspect-square rounded-xl overflow-hidden bg-surface-container-low mb-space-sm">
+                                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                        data-alt="Circular blush compact showing baked marble peach-pink powder with subtle micro-pearl illumination on a warm marble tile."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-iHCCK6ABBqvhQM3CDHqlBGbFpR9wtd8Qz9Cl3SkY1vvJyPLiHrxixhMmuAkM-OmTTK4yRjgks96ik8kWdMHIE7ejPjhqgSXqMluWGkqSoauw5sVGusxQOzDU-IWGMtWeTxmz8L8buz1eSF5sXg6hwHdyb2gaCtMcVRhZKqESHDa2rbzRO1ulBOOzHMEfHffFkMlM2R7NeWPriyJepjUi2aSII0yX2DpOjVpmfG1g">
+                                </div>
+                                <div class="flex items-center gap-1 text-primary mb-1">
+                                    <span class="material-symbols-outlined text-[16px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="font-label-sm text-label-sm text-on-surface font-bold">4.9</span>
+                                    <span class="font-body-sm text-body-sm text-on-surface-variant">(240)</span>
+                                </div>
+                                <h4 class="font-headline-sm text-headline-sm text-on-surface text-[18px]">Silk Baked
+                                    Blush Compact</h4>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">Luminous peach-rose marble
+                                    pigment that melts naturally into cheeks.</p>
+                            </div>
+                            <div class="flex items-center justify-between pt-space-xs">
+                                <span class="font-headline-sm text-headline-sm text-on-surface">Rs. 2,800</span>
+                                <button
+                                    class="px-space-md py-space-xs bg-primary text-on-primary font-label-sm text-label-sm rounded-full hover:bg-on-primary-fixed-variant transition-colors flex items-center gap-1"
+                                    onclick="addToCart('Silk Baked Blush Compact', 2800)">
+                                    <span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+                                    <span>Add</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Product 6 -->
+                        <div
+                            class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between gap-space-sm group">
+                            <div>
+                                <div
+                                    class="w-full aspect-square rounded-xl overflow-hidden bg-surface-container-low mb-space-sm">
+                                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                        data-alt="Luxury 12-piece cosmetic brush set arranged neatly on vegan ivory leather clutch, super soft champagne ombre bristles."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuALQR1pBu-xUd6tSiEc-RuH_o8dAD27tCmpTh81w9_ATtylMSjf-ZvpSMiiX3Lm0YnMAJPj1yH-_faD0agT7Ynr4UFgMRjQ702DFiMLEK5QIC6s6wzR5_rMWTN2GLA2XmM9t57foblnWBNg9WMskPDU1W_wpz54HeisNjVpW4KIGzkHGCdGtqSzmRimxoohMag8OLooVWFp0yi4V3yJe78qOvKV2tAb1q6hkyqR4z1M">
+                                </div>
+                                <div class="flex items-center gap-1 text-primary mb-1">
+                                    <span class="material-symbols-outlined text-[16px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="font-label-sm text-label-sm text-on-surface font-bold">5.0</span>
+                                    <span class="font-body-sm text-body-sm text-on-surface-variant">(512)</span>
+                                </div>
+                                <h4 class="font-headline-sm text-headline-sm text-on-surface text-[18px]">12-Piece
+                                    Bridal Brush Set</h4>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">Ultra-soft hypoallergenic
+                                    vegan bristles with roll-up travel pouch.</p>
+                            </div>
+                            <div class="flex items-center justify-between pt-space-xs">
+                                <span class="font-headline-sm text-headline-sm text-on-surface">Rs. 5,400</span>
+                                <button
+                                    class="px-space-md py-space-xs bg-primary text-on-primary font-label-sm text-label-sm rounded-full hover:bg-on-primary-fixed-variant transition-colors flex items-center gap-1"
+                                    onclick="addToCart('12-Piece Bridal Brush Set', 5400)">
+                                    <span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+                                    <span>Add</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Product 7 -->
+                        <div
+                            class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between gap-space-sm group">
+                            <div>
+                                <div
+                                    class="w-full aspect-square rounded-xl overflow-hidden bg-surface-container-low mb-space-sm">
+                                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                        data-alt="Translucent spray mist bottle spraying fine droplets of rosewater setting mist into air against minimalist blush studio background."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKs-heRotr0TP-lyCquxiWZiEnXuytYWqqNSRGKRUNha73pxQMOLOvYgeQlvAZkkqAbF8APNhaGaADhN2PKTnn59YaIEbhHNhdmf7XfzQdDt-ZLh30LYb7bttUDRDXDye8YP9ToiUL0W7b9DqCc83VW3vSOLeU-7vI57y_g-RK13zwamS2Tn6YiL7zOIPXlTMkqoosN11ETGiqCB64d9ZE7h5qhe1HxBE4JP71nnRJ">
+                                </div>
+                                <div class="flex items-center gap-1 text-primary mb-1">
+                                    <span class="material-symbols-outlined text-[16px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="font-label-sm text-label-sm text-on-surface font-bold">4.7</span>
+                                    <span class="font-body-sm text-body-sm text-on-surface-variant">(134)</span>
+                                </div>
+                                <h4 class="font-headline-sm text-headline-sm text-on-surface text-[18px]">Hydrating Rose
+                                    Setting Mist</h4>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">Infused with Damascus
+                                    rosewater &amp; hyaluronic acid for all-day dew.</p>
+                            </div>
+                            <div class="flex items-center justify-between pt-space-xs">
+                                <span class="font-headline-sm text-headline-sm text-on-surface">Rs. 2,600</span>
+                                <button
+                                    class="px-space-md py-space-xs bg-primary text-on-primary font-label-sm text-label-sm rounded-full hover:bg-on-primary-fixed-variant transition-colors flex items-center gap-1"
+                                    onclick="addToCart('Hydrating Rose Setting Mist', 2600)">
+                                    <span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+                                    <span>Add</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Product 8 -->
+                        <div
+                            class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between gap-space-sm group">
+                            <div>
+                                <div
+                                    class="w-full aspect-square rounded-xl overflow-hidden bg-surface-container-low mb-space-sm">
+                                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                        data-alt="Dual ended cosmetic contour pencils laying side by side on natural slate stone showing precision brown and deep nude tips."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAG9omnsbYddJES7izDE1NX6AZW7d4ObzZEoVWHgFA5olPmiHLT0JdinVfQNWps5c6KXCjR7HsX_SyQUKz_k7NSJIWT_PuUEY3OM-7vJZwHTuEqAXT-dQBcWmZ05_OZ1GxQm2DlLaazXg4ZL-2Ey38IyPQltehrCsAiWoENANkElyl76oN_odJm0PmxNjREef5OSzEx_DQjYtnfYPFmKKYFeVRA-mmGu96sZRxCngAb">
+                                </div>
+                                <div class="flex items-center gap-1 text-primary mb-1">
+                                    <span class="material-symbols-outlined text-[16px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="font-label-sm text-label-sm text-on-surface font-bold">4.8</span>
+                                    <span class="font-body-sm text-body-sm text-on-surface-variant">(215)</span>
+                                </div>
+                                <h4 class="font-headline-sm text-headline-sm text-on-surface text-[18px]">Brow &amp; Lip
+                                    Liner Duo</h4>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">Smooth waterproof glide
+                                    pencil for sharp definition and plump shaping.</p>
+                            </div>
+                            <div class="flex items-center justify-between pt-space-xs">
+                                <span class="font-headline-sm text-headline-sm text-on-surface">Rs. 2,200</span>
+                                <button
+                                    class="px-space-md py-space-xs bg-primary text-on-primary font-label-sm text-label-sm rounded-full hover:bg-on-primary-fixed-variant transition-colors flex items-center gap-1"
+                                    onclick="addToCart('Brow &amp; Lip Liner Duo', 2200)">
+                                    <span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+                                    <span>Add</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- TESTIMONIALS & BRIDAL STORIES -->
+            <section class="w-full py-space-xxl bg-surface-container-low" id="about">
+                <div class="max-w-7xl mx-auto px-gutter flex flex-col gap-space-xl">
+                    <!-- Section Header -->
+                    <div class="text-center max-w-2xl mx-auto flex flex-col items-center gap-space-xs">
+                        <span class="font-label-md text-label-md text-primary uppercase tracking-widest font-bold">Real
+                            Celebrations &amp; Memories</span>
+                        <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Cherished Bridal
+                            Stories</h2>
+                        <p class="font-body-md text-body-md text-on-surface-variant">
+                            Hear from brides and patrons who entrusted their special milestones to Angels Beauty Corner.
+                        </p>
+                    </div>
+                    <!-- Testimonial Cards Mosaic -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+                        <!-- Story 1 -->
+                        <div
+                            class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col justify-between gap-space-md">
+                            <div class="flex flex-col gap-space-sm">
+                                <div class="flex items-center gap-1 text-primary">
+                                    <span class="material-symbols-outlined text-[20px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[20px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[20px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[20px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[20px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                </div>
+                                <p class="font-body-md text-body-md text-on-surface italic">
+                                    "The at-home bridal concierge team arrived with so much grace, professional
+                                    lighting, and calm energy on my wedding morning. My makeup didn't budge through
+                                    tears and dancing. Pure enchantment."
+                                </p>
+                            </div>
+                            <div class="flex items-center gap-space-sm pt-space-xs">
+                                <div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container">
+                                    <img class="w-full h-full object-cover"
+                                        data-alt="Smiling portrait of a happy young bride with delicate pearl hair comb and radiant soft makeup in outdoor garden ceremony."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaV7gH4twP0Evzn_yPnkDHFFvrNo_W_YqkgRPNkBeMMRWBYzfVoQWzvGjlZetgvPCT2oVc8hK34ak7RTXvdtBC-hEdZidaGe0AIgVOwUGtzaQONpxuFPuhedCzu-4qiZMzPhh3m2YrvS_Z-pGjxi0AFGvXu8UODK9VqWv5wmUGMYkPd6S2FBuLjpo_UmV0wxOSQJaauXAKtnq1OUSr9ejvVKkFRk-J5HoYGEY4r8TB">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-label-md text-label-md text-on-surface font-bold">Eleanor
+                                        Vance-Sterling</span>
+                                    <span class="font-body-sm text-body-sm text-on-surface-variant">Bridal Client •
+                                        Rosewood Manor</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Story 2 -->
+                        <div
+                            class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col justify-between gap-space-md">
+                            <div class="flex flex-col gap-space-sm">
+                                <div class="flex items-center gap-1 text-primary">
+                                    <span class="material-symbols-outlined text-[20px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[20px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[20px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[20px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[20px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                </div>
+                                <p class="font-body-md text-body-md text-on-surface italic">
+                                    "Their organic facial and balayage streaking revived my damaged hair completely
+                                    before my gala. Angels Beauty Corner sets a level of service and hygiene unmatched
+                                    anywhere else in the city."
+                                </p>
+                            </div>
+                            <div class="flex items-center gap-space-sm pt-space-xs">
+                                <div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container">
+                                    <img class="w-full h-full object-cover"
+                                        data-alt="Sophisticated woman with polished chestnut wavy hair wearing elegant neutral silk top looking into camera with bright confident smile."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCActDiDhVLV-Lo7BQ9MchrVgM_StVw8LUn9sACYOHHua35Qh2vOX9meviIs61NOgZNqpTt0hrKjzpkbharTVTj55nzUzL9vec0u3KpjQQAwrVfjP_nZwO4iX-nfUH40AihwRs1xbD-Mq1a__oROqYsUiVh3TijOwQkV2jkQc_tvc0XDNp_WUrarKnZ3OSWEkGruFffaHGi06y1J_iqBwTvHy6OapUzeODR8-UhLRVM">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-label-md text-label-md text-on-surface font-bold">Camilla
+                                        D'Souza</span>
+                                    <span class="font-body-sm text-body-sm text-on-surface-variant">Hair &amp; Skin
+                                        Member</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Story 3 -->
+                        <div
+                            class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col justify-between gap-space-md">
+                            <div class="flex flex-col gap-space-sm">
+                                <div class="flex items-center gap-1 text-primary">
+                                    <span class="material-symbols-outlined text-[20px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[20px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[20px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[20px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[20px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                </div>
+                                <p class="font-body-md text-body-md text-on-surface italic">
+                                    "The mehendi artists and party makeup team handled my entire bridal party of 8
+                                    bridesmaids with effortless precision. Everyone was ready 45 minutes ahead of
+                                    schedule and looked breathtaking."
+                                </p>
+                            </div>
+                            <div class="flex items-center gap-space-sm pt-space-xs">
+                                <div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container">
+                                    <img class="w-full h-full object-cover"
+                                        data-alt="Portrait of a bride adorned with intricate gold jewelry and rich mehendi patterns on her hands, smiling warmly."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGWA1_QMwPJgNopNex_b1YrSdcUXejQhENJCJD5UcCzXH9nVcq8XlQ6ZirZuNdpGaIBMJcVjdEJRY16ntN4kOEBjxJgiPsw5W8H_e-oCi8FDPo_AOg98eVKnTfvPw7TFZ1TGCj3Uu9Jf7epTdEoXTuk6uhjplCn20WP16qUv8um_lhvQM6bxeOl3YJe1eFC2LKxFQOtBYjD3keBde0H6K1tDfVCao4LbfxUEubF072">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-label-md text-label-md text-on-surface font-bold">Ayesha
+                                        Noor</span>
+                                    <span class="font-body-sm text-body-sm text-on-surface-variant">Festive Henna &amp;
+                                        Bridal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- LUXURY BANNER / ATELIER PROMISE -->
+            <section class="w-full py-space-xl bg-surface">
+                <div class="max-w-7xl mx-auto px-gutter">
+                    <div
+                        class="bg-surface-container-high rounded-3xl p-space-lg md:p-space-xl flex flex-col md:flex-row items-center justify-between gap-space-lg">
+                        <div class="flex flex-col gap-space-xs max-w-xl">
+                            <span
+                                class="font-label-sm text-label-sm text-primary uppercase tracking-widest font-bold">The
+                                Angels Standard</span>
+                            <h3 class="font-headline-md text-headline-md text-on-surface">Experience Unrivaled Atelier
+                                Care</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant">
+                                Whether inside our fragrance-scented studio or from the sanctuary of your home, our
+                                licensed artists bring hospital-grade sterilization, single-use sanitization, and
+                                bespoke organic palettes.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-space-md shrink-0">
+                            <a class="px-space-xl py-space-sm bg-primary text-on-primary font-label-lg text-label-lg rounded-full hover:bg-on-primary-fixed-variant transition-colors shadow-md"
+                                href="#booking">
+                                Schedule Appointment
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- INTERACTIVE SCRIPTS FOR LIVE BOOKING ENGINE & CART PREVIEWS (ES5 JAVASCRIPT) -->
+        <script>
+            /* ==========================================================================
+               Angels Beauty Corner - Interactive Engine (Strict ECMAScript 5 / ES5)
+               ========================================================================== */
+            (function () {
+                'use strict';
+
+                // Application state
+                var bookingState = {
+                    mode: 'salon',
+                    serviceName: 'Bridal Makeup',
+                    basePrice: 18000,
+                    duration: '180 min',
+                    tierPrice: 0,
+                    tierName: 'Lead Bridal Artist',
+                    timeSlot: '10:00 AM',
+                    date: '2025-05-15'
+                };
+
+                var cart = {
+                    count: 0,
+                    subtotal: 0,
+                    items: []
+                };
+
+                // ES5 Helper: String contains substring
+                function strContains(str, substr) {
+                    if (!str || !substr) {
+                        return false;
+                    }
+                    return String(str).toLowerCase().indexOf(String(substr).toLowerCase()) !== -1;
+                }
+
+                // ES5 Helper: Safe smooth scroll
+                function scrollToSection(targetId) {
+                    var el = document.getElementById(targetId);
+                    if (el) {
+                        if (typeof el.scrollIntoView === 'function') {
+                            try {
+                                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            } catch (err) {
+                                el.scrollIntoView(true);
+                            }
+                        } else {
+                            window.location.hash = '#' + targetId;
+                        }
+                    }
+                }
+
+                // Switch between Salon Studio & VIP Home Concierge
+                function switchBookingMode(mode) {
+                    bookingState.mode = mode;
+                    var salonBtn = document.getElementById('tab-salon-btn');
+                    var homeBtn = document.getElementById('tab-home-btn');
+                    var homeFields = document.getElementById('home-service-fields');
+                    var summaryBadge = document.getElementById('summary-mode-badge');
+                    var travelFeeRow = document.getElementById('summary-travel-fee-row');
+
+                    if (mode === 'home') {
+                        if (homeBtn) {
+                            homeBtn.className = 'px-space-lg py-space-xs rounded-full font-label-md text-label-md transition-all duration-300 bg-primary text-on-primary shadow-sm flex items-center gap-space-xs';
+                        }
+                        if (salonBtn) {
+                            salonBtn.className = 'px-space-lg py-space-xs rounded-full font-label-md text-label-md transition-all duration-300 text-on-surface-variant hover:text-primary flex items-center gap-space-xs';
+                        }
+                        if (homeFields) {
+                            homeFields.className = homeFields.className.replace(/\bhidden\b/g, '').trim() + ' flex';
+                        }
+                        if (summaryBadge) {
+                            summaryBadge.textContent = 'Home Concierge';
+                            summaryBadge.className = 'font-label-sm text-label-sm px-space-sm py-0.5 rounded-full bg-primary text-on-primary uppercase font-bold';
+                        }
+                        if (travelFeeRow) {
+                            travelFeeRow.style.display = 'flex';
+                        }
+                    } else {
+                        if (salonBtn) {
+                            salonBtn.className = 'px-space-lg py-space-xs rounded-full font-label-md text-label-md transition-all duration-300 bg-primary text-on-primary shadow-sm flex items-center gap-space-xs';
+                        }
+                        if (homeBtn) {
+                            homeBtn.className = 'px-space-lg py-space-xs rounded-full font-label-md text-label-md transition-all duration-300 text-on-surface-variant hover:text-primary flex items-center gap-space-xs';
+                        }
+                        if (homeFields) {
+                            if (homeFields.className.indexOf('hidden') === -1) {
+                                homeFields.className = (homeFields.className.replace(/\bflex\b/g, '').trim() + ' hidden').trim();
+                            }
+                        }
+                        if (summaryBadge) {
+                            summaryBadge.textContent = 'Salon Studio';
+                            summaryBadge.className = 'font-label-sm text-label-sm px-space-sm py-0.5 rounded-full bg-surface-container text-primary uppercase font-bold';
+                        }
+                        if (travelFeeRow) {
+                            travelFeeRow.style.display = 'none';
+                        }
+                    }
+                    updateSummary();
+                }
+
+                // Treatment chip selection
+                function selectServiceItem(name, price, duration) {
+                    bookingState.serviceName = name;
+                    bookingState.basePrice = Number(price) || 0;
+                    bookingState.duration = duration || '60 min';
+
+                    var chips = document.querySelectorAll('.service-chip');
+                    var i;
+                    for (i = 0; i < chips.length; i++) {
+                        var chip = chips[i];
+                        var chipText = (chip.innerText || chip.textContent || '').replace(/\s+/g, ' ').trim();
+                        if (strContains(chipText, name) || strContains(name, chipText)) {
+                            chip.className = 'service-chip active text-left p-space-sm rounded-xl bg-primary text-on-primary font-label-sm text-label-sm transition-all shadow-sm';
+                        } else {
+                            chip.className = 'service-chip text-left p-space-sm rounded-xl bg-surface-container text-on-surface font-label-sm text-label-sm transition-all hover:bg-surface-container-high';
+                        }
+                    }
+
+                    updateSummary();
+                }
+
+                // Prefill booking from service cards and scroll to booking section
+                function prefillBooking(name, price) {
+                    var dur = '60 min';
+                    if (strContains(name, 'Bridal')) {
+                        dur = '180 min';
+                    } else if (strContains(name, 'Color')) {
+                        dur = '120 min';
+                    } else if (strContains(name, 'Facial')) {
+                        dur = '75 min';
+                    } else if (strContains(name, 'Streaking')) {
+                        dur = '90 min';
+                    } else if (strContains(name, 'Cut') || strContains(name, 'Blowout') || strContains(name, 'Nail')) {
+                        dur = '45 min';
+                    }
+
+                    selectServiceItem(name, price, dur);
+                    scrollToSection('booking');
+                }
+
+                // Time slot selection
+                function selectTimeSlot(el, time) {
+                    bookingState.timeSlot = time;
+                    var slots = document.querySelectorAll('.time-slot');
+                    var i;
+                    for (i = 0; i < slots.length; i++) {
+                        slots[i].className = 'time-slot px-space-xs py-space-sm bg-surface-container text-on-surface rounded-xl font-label-sm text-label-sm text-center hover:bg-surface-container-high';
+                    }
+                    if (el) {
+                        el.className = 'time-slot px-space-xs py-space-sm bg-primary text-on-primary rounded-xl font-label-sm text-label-sm text-center';
+                    }
+                    updateSummary();
+                }
+
+                // Stylist Tier Selection
+                function updateTier(tierName, surcharge) {
+                    bookingState.tierName = tierName;
+                    bookingState.tierPrice = Number(surcharge) || 0;
+                    updateSummary();
+                }
+
+                // ES5 Helper: Format price with commas for PKR / Rs.
+                function formatPrice(amount) {
+                    var val = Math.round(Number(amount) || 0);
+                    return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                }
+
+                // Live Summary calculation
+                function updateSummary() {
+                    var sName = document.getElementById('summary-service-name');
+                    var sDur = document.getElementById('summary-service-duration');
+                    var sTier = document.getElementById('summary-tier-name');
+                    var sSlot = document.getElementById('summary-slot');
+                    var sTotal = document.getElementById('summary-total-price');
+
+                    if (sName) { sName.textContent = bookingState.serviceName; }
+                    if (sDur) { sDur.textContent = bookingState.duration; }
+                    if (sTier) { sTier.textContent = bookingState.tierName; }
+                    if (sSlot) { sSlot.textContent = bookingState.timeSlot; }
+
+                    var travelFee = (bookingState.mode === 'home') ? 2000 : 0;
+                    var total = bookingState.basePrice + bookingState.tierPrice + travelFee;
+                    if (sTotal) {
+                        sTotal.textContent = 'Rs. ' + formatPrice(total);
+                    }
+                }
+
+                // Confirm Appointment
+                function confirmBooking() {
+                    var nameInput = document.getElementById('booking-name');
+                    var phoneInput = document.getElementById('booking-phone');
+                    var dateInput = document.getElementById('booking-date');
+                    var addressInput = document.getElementById('home-address');
+
+                    var clientName = (nameInput && nameInput.value) ? nameInput.value.trim() : '';
+                    var clientPhone = (phoneInput && phoneInput.value) ? phoneInput.value.trim() : '';
+                    var appointmentDate = (dateInput && dateInput.value) ? dateInput.value : bookingState.date;
+
+                    if (bookingState.mode === 'home' && addressInput && !addressInput.value.trim()) {
+                        alert('Please enter your destination address for VIP At-Home Concierge service.');
+                        addressInput.focus();
+                        return;
+                    }
+
+                    var travelFee = (bookingState.mode === 'home') ? 2000 : 0;
+                    var total = bookingState.basePrice + bookingState.tierPrice + travelFee;
+                    var travelText = bookingState.mode === 'home' ? ' (VIP At-Home Concierge)' : ' (Salon Studio Visit)';
+                    var msg = 'Thank you' + (clientName ? ', ' + clientName : '') + '!\n\n' +
+                              'Your appointment for ' + bookingState.serviceName + travelText + '\n' +
+                              'Date: ' + appointmentDate + ' at ' + bookingState.timeSlot + '\n' +
+                              'Stylist: ' + bookingState.tierName + '\n' +
+                              'Total Estimated Price: Rs. ' + formatPrice(total) + '\n\n' +
+                              'Our VIP concierge will text confirmation to ' + (clientPhone || 'your phone') + ' within 15 minutes.';
+                    alert(msg);
+                }
+
+                // Shopping Cart (PKR / Rs.)
+                function addToCart(title, price) {
+                    var numPrice = Number(price) || 0;
+                    cart.count += 1;
+                    cart.subtotal += numPrice;
+                    cart.items.push({ title: title, price: numPrice });
+
+                    var countEl = document.getElementById('cart-item-count');
+                    var subtotalEl = document.getElementById('cart-subtotal');
+                    var headerBadge = document.getElementById('header-cart-badge');
+
+                    if (countEl) {
+                        countEl.textContent = cart.count + (cart.count === 1 ? ' Item' : ' Items');
+                    }
+                    if (subtotalEl) {
+                        subtotalEl.textContent = 'Rs. ' + formatPrice(cart.subtotal);
+                    }
+                    if (headerBadge) {
+                        headerBadge.textContent = String(cart.count);
+                    }
+
+                    alert('Added "' + title + '" (Rs. ' + formatPrice(numPrice) + ') to cart.\n' +
+                          'Total Cart: ' + cart.count + ' item(s) • Rs. ' + formatPrice(cart.subtotal));
+                }
+
+                // Search handler
+                function handleSearchClick() {
+                    var query = prompt('Search our salon services or cosmetic products:');
+                    if (query && query.trim()) {
+                        var q = query.trim().toLowerCase();
+                        if (strContains('services haircut bridal makeup manicure mehendi facial skin hair styling blowout', q)) {
+                            scrollToSection('services');
+                        } else if (strContains('products lipstick foundation mascara palette brush blush mist liner cosmetics', q)) {
+                            scrollToSection('products');
+                        } else {
+                            alert('Showing results for "' + query + '". Explore our services and cosmetics below.');
+                            scrollToSection('services');
+                        }
+                    }
+                }
+
+                // Expose methods to global window for inline onclick handlers
+                window.switchBookingMode = switchBookingMode;
+                window.selectServiceItem = selectServiceItem;
+                window.prefillBooking = prefillBooking;
+                window.selectTimeSlot = selectTimeSlot;
+                window.updateTier = updateTier;
+                window.updateSummary = updateSummary;
+                window.confirmBooking = confirmBooking;
+                window.addToCart = addToCart;
+                window.scrollToSection = scrollToSection;
+                window.handleSearchClick = handleSearchClick;
+
+                // Bind DOM event listeners
+                function init() {
+                    // Navigation links smooth scroll
+                    var navLinks = document.querySelectorAll('a[data-path]');
+                    var i;
+                    for (i = 0; i < navLinks.length; i++) {
+                        (function (link) {
+                            link.onclick = function (e) {
+                                var path = link.getAttribute('data-path');
+                                if (path) {
+                                    if (e && e.preventDefault) {
+                                        e.preventDefault();
+                                    } else {
+                                        window.event.returnValue = false;
+                                    }
+                                    scrollToSection(path);
+                                }
+                            };
+                        })(navLinks[i]);
+                    }
+
+                    // Newsletter forms
+                    var forms = document.getElementsByTagName('form');
+                    for (i = 0; i < forms.length; i++) {
+                        forms[i].onsubmit = function (e) {
+                            if (e && e.preventDefault) {
+                                e.preventDefault();
+                            } else {
+                                window.event.returnValue = false;
+                            }
+                            alert('Thank you for subscribing to Angels Beauty Corner newsletter! Exclusive previews will be emailed to you.');
+                            return false;
+                        };
+                    }
+
+                    // Date input change
+                    var dateInput = document.getElementById('booking-date');
+                    if (dateInput) {
+                        dateInput.onchange = function () {
+                            bookingState.date = this.value;
+                        };
+                    }
+
+                    // Compute initial summary
+                    updateSummary();
+                }
+
+                if (document.readyState === 'complete' || document.readyState === 'interactive') {
+                    init();
+                } else if (document.addEventListener) {
+                    document.addEventListener('DOMContentLoaded', init, false);
+                } else if (document.attachEvent) {
+                    document.attachEvent('onreadystatechange', function () {
+                        if (document.readyState === 'complete') {
+                            init();
+                        }
+                    });
+                }
+            })();
+        </script>
+    </main>
+
+    <footer class="w-full bg-surface-container-low text-on-surface" id="contact">
+        <div class="max-w-7xl mx-auto px-gutter pt-space-xxl pb-space-xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-xl">
+                <div class="lg:col-span-4 flex flex-col gap-space-md">
+                    <div class="flex items-center gap-space-sm"><img alt="Angels Beauty Corner Logo"
+                            class="h-8 w-auto object-contain"
+                            src="https://lh3.googleusercontent.com/aida/ALJJyrAhCt9uJTuMoy1TReM9HcahkwoddBTbgUjEJ1hqtiE9gqOwVQEo-w433nIahBcuMG2ZEq-qjGM0JeMTJ36DYa_hb5dcxP1-ZTfRq4qJaK-ONNEaRfsYbu-BteBAQndno0402I_0ODwlXpBMlnv4recCA1hCRvCue5XeuM99FOWMd48ZXQY9YTsQ-guiU03Pr1-WoVglCEmTMqrQItazSuNUuGq2fL6iA0I9bLBgeedhzQ"><span
+                            class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Angels Beauty
+                            Corner</span></div>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">A luxurious sanctuary
+                        dedicated to bespoke aesthetic treatments, restorative rituals, and mindful cosmetic
+                        formulations tailored for your inner and outer grace.</p>
+                    <div class="flex items-center gap-space-sm text-on-surface-variant"><span
+                            class="material-symbols-outlined text-[20px]">spa</span><span
+                            class="material-symbols-outlined text-[20px]">auto_awesome</span><span
+                            class="material-symbols-outlined text-[20px]">favorite</span></div>
+                </div>
+                <div class="lg:col-span-2 flex flex-col gap-space-sm">
+                    <h3 class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider">Quick Links</h3>
+                    <ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+                        <li><a class="hover:text-primary transition-colors" data-path="services" href="#">Our
+                                Treatments</a></li>
+                        <li><a class="hover:text-primary transition-colors" data-path="products" href="#">Cosmetic
+                                Line</a></li>
+                        <li><a class="hover:text-primary transition-colors" data-path="booking" href="#">Online
+                                Appointments</a></li>
+                        <li><a class="hover:text-primary transition-colors" data-path="about" href="#">Our
+                                Philosophy</a></li>
+                        <li><a class="hover:text-primary transition-colors" data-path="contact" href="#">Visit
+                                Studio</a></li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-3 flex flex-col gap-space-sm">
+                    <h3 class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider">Salon &amp; Service
+                        Hours</h3>
+                    <div class="font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-space-xs">
+                        <p><span class="font-label-sm text-label-sm text-on-surface uppercase block">Salon
+                                Studio:</span>Mon - Sat: 9:00 AM – 7:30 PM<br>Sunday: 10:00 AM – 5:00 PM</p>
+                        <p><span class="font-label-sm text-label-sm text-on-surface uppercase block">At-Home
+                                Services:</span>Tue - Sun: 8:00 AM – 8:00 PM<br>Advance booking required</p>
+                    </div>
+                </div>
+                <div class="lg:col-span-3 flex flex-col gap-space-sm">
+                    <h3 class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider">Newsletter</h3>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">Receive exclusive salon invitations,
+                        seasonal beauty edits, and private treatment privileges.</p>
+                    <form class="flex flex-col gap-space-xs"><input
+                            class="w-full px-space-md py-space-sm bg-surface-container-lowest text-on-surface rounded-xl font-body-sm text-body-sm placeholder:text-outline-variant focus:outline-none focus:ring-1 focus:ring-primary shadow-[0_1px_4px_rgba(58,42,45,0.04)]"
+                            placeholder="Your email address" type="email"><button
+                            class="w-full py-space-sm px-space-md bg-primary text-on-primary font-label-md text-label-md rounded-full hover:bg-on-primary-fixed-variant transition-colors"
+                            type="submit">Subscribe</button></form>
+                </div>
+            </div>
+            <div
+                class="mt-space-xl pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-on-surface-variant">
+                <div class="flex flex-wrap items-center gap-space-lg"><span><span
+                            class="font-label-sm text-label-sm uppercase text-on-surface">Phone:</span> +1 (555)
+                        382-7489</span><span><span
+                            class="font-label-sm text-label-sm uppercase text-on-surface">WhatsApp:</span> +1 (555)
+                        720-9114</span><span><span
+                            class="font-label-sm text-label-sm uppercase text-on-surface">Studio:</span> 442 Atelier
+                        Row, Suite 4B</span><span><span
+                            class="font-label-sm text-label-sm uppercase text-on-surface">Email:</span>
+                        concierge@angelsbeauty.com</span></div>
+                <p>© 2025 Angels Beauty Corner. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -260,6 +260,51 @@
     }
 
 
+    // ES5 Mobile Navigation Drawer Toggle
+    function toggleMobileMenu(isOpen) {
+        var drawer = document.getElementById('mobile-menu-drawer');
+        var backdrop = document.getElementById('mobile-menu-backdrop');
+        var panel = document.getElementById('mobile-menu-panel');
+        var btn = document.getElementById('mobile-menu-btn');
+
+        if (!drawer || !backdrop || !panel) {
+            return;
+        }
+
+        var shouldOpen;
+        if (typeof isOpen === 'boolean') {
+            shouldOpen = isOpen;
+        } else {
+            shouldOpen = drawer.className.indexOf('invisible') !== -1;
+        }
+
+        if (shouldOpen) {
+            drawer.classList.remove('invisible', 'pointer-events-none', 'opacity-0');
+            drawer.classList.add('pointer-events-auto', 'opacity-100');
+            backdrop.classList.remove('opacity-0');
+            backdrop.classList.add('opacity-100');
+            panel.classList.remove('translate-x-full');
+            panel.classList.add('translate-x-0');
+            document.body.style.overflow = 'hidden';
+            if (btn) {
+                btn.setAttribute('aria-expanded', 'true');
+            }
+        } else {
+            backdrop.classList.remove('opacity-100');
+            backdrop.classList.add('opacity-0');
+            panel.classList.remove('translate-x-0');
+            panel.classList.add('translate-x-full');
+            document.body.style.overflow = '';
+            if (btn) {
+                btn.setAttribute('aria-expanded', 'false');
+            }
+            setTimeout(function () {
+                drawer.classList.remove('pointer-events-auto', 'opacity-100');
+                drawer.classList.add('invisible', 'pointer-events-none', 'opacity-0');
+            }, 300);
+        }
+    }
+
     // Expose methods to global window for inline onclick handlers
     window.switchBookingMode = switchBookingMode;
     window.selectServiceItem = selectServiceItem;
@@ -271,6 +316,7 @@
     window.addToCart = addToCart;
     window.scrollToSection = scrollToSection;
     window.handleSearchClick = handleSearchClick;
+    window.toggleMobileMenu = toggleMobileMenu;
 
     // Bind DOM event listeners
     function init() {
@@ -287,10 +333,32 @@
                         } else {
                             window.event.returnValue = false;
                         }
+                        toggleMobileMenu(false);
                         scrollToSection(path);
                     }
                 };
             })(navLinks[i]);
+        }
+
+        // Close mobile drawer on Escape key or Desktop resize
+        if (window.addEventListener) {
+            window.addEventListener('keydown', function (e) {
+                if (e.keyCode === 27) {
+                    toggleMobileMenu(false);
+                }
+            }, false);
+            window.addEventListener('resize', function () {
+                if (window.innerWidth >= 1024) {
+                    toggleMobileMenu(false);
+                }
+            }, false);
+        } else if (window.attachEvent) {
+            window.attachEvent('onkeydown', function () {
+                var evt = window.event;
+                if (evt && evt.keyCode === 27) {
+                    toggleMobileMenu(false);
+                }
+            });
         }
 
         // Newsletter forms

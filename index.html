@@ -64,11 +64,11 @@
 <body class="bg-surface font-body-md text-on-surface antialiased" id="home">
     <header
         class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(58,42,45,0.06)]">
-        <div class="h-20 max-w-7xl mx-auto px-gutter flex items-center justify-between gap-space-md">
-            <div class="flex items-center gap-space-sm"><img alt="Angels Beauty Corner Logo"
-                    class="h-10 w-auto object-contain"
+        <div class="h-20 max-w-7xl mx-auto px-3 sm:px-gutter flex items-center justify-between gap-2 sm:gap-space-md">
+            <div class="flex items-center gap-2 sm:gap-space-sm min-w-0"><img alt="Angels Beauty Corner Logo"
+                    class="h-8 sm:h-10 w-auto object-contain shrink-0"
                     src="Images/20261123_093736.png"><span
-                    class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Angels Beauty Corner</span>
+                    class="font-headline-sm text-[15px] sm:text-lg lg:text-headline-sm font-semibold text-on-surface tracking-tight whitespace-nowrap leading-none sm:leading-tight">Angels Beauty Corner</span>
             </div>
             <nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-bold"><a
                     aria-current="page" class="transition-colors text-primary font-bold" data-path="home"
@@ -83,22 +83,118 @@
                     data-path="about" href="#">About</a><a
                     class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors"
                     data-path="contact" href="#">Contact</a></nav>
-            <div class="flex items-center gap-space-md"><button
-                    class="p-space-xs text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center"
-                    onclick="handleSearchClick()" type="button"><span
-                        class="material-symbols-outlined text-[22px]">search</span></button><button
-                    class="relative p-space-xs text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center"
-                    onclick="scrollToSection('products')" type="button"><span
-                        class="material-symbols-outlined text-[22px]">shopping_bag</span><span
+            <div class="flex items-center gap-1.5 sm:gap-space-md shrink-0"><button
+                    class="p-1.5 sm:p-space-xs text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center"
+                    onclick="handleSearchClick()" type="button" title="Search"><span
+                        class="material-symbols-outlined text-[20px] sm:text-[22px]">search</span></button><button
+                    class="relative p-1.5 sm:p-space-xs text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center"
+                    onclick="scrollToSection('products')" type="button" title="Shopping Cart"><span
+                        class="material-symbols-outlined text-[20px] sm:text-[22px]">shopping_bag</span><span
                         class="absolute -top-1 -right-1 bg-primary text-on-primary font-label-sm text-label-sm w-4 h-4 rounded-full flex items-center justify-center"
                         id="header-cart-badge">0</span></button><a
                     class="hidden sm:inline-flex items-center justify-center px-space-lg py-space-sm bg-primary-container text-on-primary font-label-lg text-label-lg rounded-full hover:bg-primary transition-colors shadow-[0_4px_12px_rgba(184,41,61,0.2)]"
                     data-path="booking" href="#">Book Now</a>
-                <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span
-                        class="material-symbols-outlined text-on-primary text-[18px]">person</span></div>
+                <div class="hidden sm:flex w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-primary items-center justify-center shrink-0"><span
+                        class="material-symbols-outlined text-on-primary text-[16px] sm:text-[18px]">person</span></div>
+                <!-- 3 BARS (HAMBURGER) BUTTON FOR SMALL SCREENS -->
+                <button aria-controls="mobile-menu-drawer" aria-expanded="false" aria-label="Open Navigation Menu"
+                    class="lg:hidden p-1.5 sm:p-2 text-on-surface-variant hover:text-primary hover:bg-surface-container-high rounded-full transition-colors flex items-center justify-center"
+                    id="mobile-menu-btn" onclick="toggleMobileMenu(true)" title="Menu" type="button">
+                    <span class="material-symbols-outlined text-[26px]">menu</span>
+                </button>
             </div>
         </div>
     </header>
+
+    <!-- MOBILE NAVIGATION DRAWER & BACKDROP -->
+    <div aria-hidden="true" aria-label="Mobile Navigation Menu"
+        class="fixed inset-0 z-50 transition-all duration-300 pointer-events-none opacity-0 invisible"
+        id="mobile-menu-drawer" role="dialog">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-on-surface/40 backdrop-blur-sm transition-opacity duration-300 opacity-0"
+            id="mobile-menu-backdrop" onclick="toggleMobileMenu(false)"></div>
+        <!-- Panel -->
+        <div class="absolute top-0 right-0 w-full max-w-xs sm:max-w-sm h-full bg-surface shadow-2xl flex flex-col justify-between p-6 transform translate-x-full transition-transform duration-300 ease-in-out border-l border-outline-variant/40 overflow-y-auto"
+            id="mobile-menu-panel">
+            <!-- Header -->
+            <div class="flex items-center justify-between pb-4 border-b border-outline-variant/40">
+                <div class="flex items-center gap-2">
+                    <img alt="Angels Beauty Corner Logo" class="h-8 w-auto object-contain shrink-0"
+                        src="Images/20261123_093736.png">
+                    <span class="font-headline-sm text-base font-semibold text-on-surface tracking-tight">Angels Beauty Corner</span>
+                </div>
+                <button aria-label="Close navigation menu"
+                    class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors"
+                    id="mobile-menu-close-btn" onclick="toggleMobileMenu(false)" type="button">
+                    <span class="material-symbols-outlined text-[24px]">close</span>
+                </button>
+            </div>
+
+            <!-- Links -->
+            <nav class="flex flex-col py-6 gap-2">
+                <a class="flex items-center justify-between px-4 py-3 rounded-xl text-on-surface hover:text-primary hover:bg-surface-container-high/60 transition-all font-label-lg text-base group"
+                    data-path="home" href="#">
+                    <span class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary text-[22px]">home</span>
+                        <span>Home</span>
+                    </span>
+                    <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors text-[20px]">chevron_right</span>
+                </a>
+                <a class="flex items-center justify-between px-4 py-3 rounded-xl text-on-surface hover:text-primary hover:bg-surface-container-high/60 transition-all font-label-lg text-base group"
+                    data-path="services" href="#">
+                    <span class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary text-[22px]">spa</span>
+                        <span>Services</span>
+                    </span>
+                    <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors text-[20px]">chevron_right</span>
+                </a>
+                <a class="flex items-center justify-between px-4 py-3 rounded-xl text-on-surface hover:text-primary hover:bg-surface-container-high/60 transition-all font-label-lg text-base group"
+                    data-path="products" href="#">
+                    <span class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary text-[22px]">shopping_bag</span>
+                        <span>Products</span>
+                    </span>
+                    <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors text-[20px]">chevron_right</span>
+                </a>
+                <a class="flex items-center justify-between px-4 py-3 rounded-xl text-on-surface hover:text-primary hover:bg-surface-container-high/60 transition-all font-label-lg text-base group"
+                    data-path="booking" href="#">
+                    <span class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary text-[22px]">calendar_month</span>
+                        <span>Booking</span>
+                    </span>
+                    <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors text-[20px]">chevron_right</span>
+                </a>
+                <a class="flex items-center justify-between px-4 py-3 rounded-xl text-on-surface hover:text-primary hover:bg-surface-container-high/60 transition-all font-label-lg text-base group"
+                    data-path="about" href="#">
+                    <span class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary text-[22px]">favorite</span>
+                        <span>About</span>
+                    </span>
+                    <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors text-[20px]">chevron_right</span>
+                </a>
+                <a class="flex items-center justify-between px-4 py-3 rounded-xl text-on-surface hover:text-primary hover:bg-surface-container-high/60 transition-all font-label-lg text-base group"
+                    data-path="contact" href="#">
+                    <span class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary text-[22px]">call</span>
+                        <span>Contact</span>
+                    </span>
+                    <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors text-[20px]">chevron_right</span>
+                </a>
+            </nav>
+
+            <!-- Actions / Footer -->
+            <div class="pt-4 border-t border-outline-variant/40 flex flex-col gap-3">
+                <a class="w-full flex items-center justify-center gap-2 py-3 px-4 bg-primary text-on-primary rounded-full font-label-lg text-label-lg hover:bg-primary-container transition-colors shadow-[0_4px_12px_rgba(184,41,61,0.2)] text-center"
+                    data-path="booking" href="#">
+                    <span class="material-symbols-outlined text-[20px]">calendar_today</span>
+                    <span>Book Appointment</span>
+                </a>
+                <div class="text-center font-body-sm text-[12px] text-on-surface-variant pt-1">
+                    Exquisite Salon &amp; VIP Home Care
+                </div>
+            </div>
+        </div>
+    </div>
     <main class="w-full pt-20 bg-surface min-h-[calc(100vh-20rem)]">
         <div class="flex flex-col w-full">
             <!-- HERO SECTION -->
@@ -1515,6 +1611,51 @@
                         }
                     }
 
+                    // ES5 Mobile Navigation Drawer Toggle
+                    function toggleMobileMenu(isOpen) {
+                        var drawer = document.getElementById('mobile-menu-drawer');
+                        var backdrop = document.getElementById('mobile-menu-backdrop');
+                        var panel = document.getElementById('mobile-menu-panel');
+                        var btn = document.getElementById('mobile-menu-btn');
+
+                        if (!drawer || !backdrop || !panel) {
+                            return;
+                        }
+
+                        var shouldOpen;
+                        if (typeof isOpen === 'boolean') {
+                            shouldOpen = isOpen;
+                        } else {
+                            shouldOpen = drawer.className.indexOf('invisible') !== -1;
+                        }
+
+                        if (shouldOpen) {
+                            drawer.classList.remove('invisible', 'pointer-events-none', 'opacity-0');
+                            drawer.classList.add('pointer-events-auto', 'opacity-100');
+                            backdrop.classList.remove('opacity-0');
+                            backdrop.classList.add('opacity-100');
+                            panel.classList.remove('translate-x-full');
+                            panel.classList.add('translate-x-0');
+                            document.body.style.overflow = 'hidden';
+                            if (btn) {
+                                btn.setAttribute('aria-expanded', 'true');
+                            }
+                        } else {
+                            backdrop.classList.remove('opacity-100');
+                            backdrop.classList.add('opacity-0');
+                            panel.classList.remove('translate-x-0');
+                            panel.classList.add('translate-x-full');
+                            document.body.style.overflow = '';
+                            if (btn) {
+                                btn.setAttribute('aria-expanded', 'false');
+                            }
+                            setTimeout(function () {
+                                drawer.classList.remove('pointer-events-auto', 'opacity-100');
+                                drawer.classList.add('invisible', 'pointer-events-none', 'opacity-0');
+                            }, 300);
+                        }
+                    }
+
                     // Expose methods to global window for inline onclick handlers
                     window.switchBookingMode = switchBookingMode;
                     window.selectServiceItem = selectServiceItem;
@@ -1526,6 +1667,7 @@
                     window.addToCart = addToCart;
                     window.scrollToSection = scrollToSection;
                     window.handleSearchClick = handleSearchClick;
+                    window.toggleMobileMenu = toggleMobileMenu;
 
                     // Bind DOM event listeners
                     function init() {
@@ -1542,10 +1684,32 @@
                                         } else {
                                             window.event.returnValue = false;
                                         }
+                                        toggleMobileMenu(false);
                                         scrollToSection(path);
                                     }
                                 };
                             })(navLinks[i]);
+                        }
+
+                        // Close mobile drawer on Escape key or Desktop resize
+                        if (window.addEventListener) {
+                            window.addEventListener('keydown', function (e) {
+                                if (e.keyCode === 27) {
+                                    toggleMobileMenu(false);
+                                }
+                            }, false);
+                            window.addEventListener('resize', function () {
+                                if (window.innerWidth >= 1024) {
+                                    toggleMobileMenu(false);
+                                }
+                            }, false);
+                        } else if (window.attachEvent) {
+                            window.attachEvent('onkeydown', function () {
+                                var evt = window.event;
+                                if (evt && evt.keyCode === 27) {
+                                    toggleMobileMenu(false);
+                                }
+                            });
                         }
 
                         // Newsletter forms

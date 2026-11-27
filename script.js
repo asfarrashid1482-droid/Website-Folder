@@ -1,17 +1,6 @@
-/**
- * Angels Beauty Corner - Interactive Engine
- * Standard: ECMAScript 5 (ES5) - Strict Mode
- * Currency: PKR / Rs. (Pakistani Rupee)
- * Features:
- *   - Dual-Mode Booking Engine (Salon Studio & VIP Home Concierge)
- *   - Service Selection & Prefill Scroll with PKR pricing
- *   - Live Pricing & Stylist Tier Calculations
- *   - Cosmetic Shopping Cart with PKR formatting
- */
 (function () {
     'use strict';
 
-    // Application state
     var bookingState = {
         mode: 'salon',
         serviceName: 'Bridal Makeup',
@@ -29,13 +18,11 @@
         items: []
     };
 
-    // ES5 Helper: Format price with commas for PKR / Rs.
     function formatPrice(amount) {
         var val = Math.round(Number(amount) || 0);
         return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     }
 
-    // ES5 Helper: Case-insensitive substring check
     function strContains(str, substr) {
         if (!str || !substr) {
             return false;
@@ -43,7 +30,6 @@
         return String(str).toLowerCase().indexOf(String(substr).toLowerCase()) !== -1;
     }
 
-    // ES5 Helper: Safe smooth scrolling into view
     function scrollToSection(targetId) {
         var el = document.getElementById(targetId);
         if (el) {
@@ -59,7 +45,6 @@
         }
     }
 
-    // Switch between Salon Studio & VIP Home Concierge
     function switchBookingMode(mode) {
         bookingState.mode = mode;
         var salonBtn = document.getElementById('tab-salon-btn');
@@ -108,7 +93,6 @@
         updateSummary();
     }
 
-    // Treatment chip selection
     function selectServiceItem(name, price, duration) {
         bookingState.serviceName = name;
         bookingState.basePrice = Number(price) || 0;
@@ -129,7 +113,6 @@
         updateSummary();
     }
 
-    // Prefill booking from service cards and scroll to booking section
     function prefillBooking(name, price) {
         var dur = '60 min';
         if (strContains(name, 'Bridal')) {
@@ -148,7 +131,6 @@
         scrollToSection('booking');
     }
 
-    // Time slot selection
     function selectTimeSlot(el, time) {
         bookingState.timeSlot = time;
         var slots = document.querySelectorAll('.time-slot');
@@ -162,14 +144,12 @@
         updateSummary();
     }
 
-    // Stylist Tier Selection
     function updateTier(tierName, surcharge) {
         bookingState.tierName = tierName;
         bookingState.tierPrice = Number(surcharge) || 0;
         updateSummary();
     }
 
-    // Live Summary calculation (PKR / Rs.)
     function updateSummary() {
         var sName = document.getElementById('summary-service-name');
         var sDur = document.getElementById('summary-service-duration');
@@ -189,7 +169,6 @@
         }
     }
 
-    // Confirm Appointment
     function confirmBooking() {
         var nameInput = document.getElementById('booking-name');
         var phoneInput = document.getElementById('booking-phone');
@@ -210,15 +189,14 @@
         var total = bookingState.basePrice + bookingState.tierPrice + travelFee;
         var travelText = bookingState.mode === 'home' ? ' (VIP At-Home Concierge)' : ' (Salon Studio Visit)';
         var msg = 'Thank you' + (clientName ? ', ' + clientName : '') + '!\n\n' +
-                  'Your appointment for ' + bookingState.serviceName + travelText + '\n' +
-                  'Date: ' + appointmentDate + ' at ' + bookingState.timeSlot + '\n' +
-                  'Stylist: ' + bookingState.tierName + '\n' +
-                  'Total Estimated Price: Rs. ' + formatPrice(total) + '\n\n' +
-                  'Our VIP concierge will text confirmation to ' + (clientPhone || 'your phone') + ' within 15 minutes.';
+            'Your appointment for ' + bookingState.serviceName + travelText + '\n' +
+            'Date: ' + appointmentDate + ' at ' + bookingState.timeSlot + '\n' +
+            'Stylist: ' + bookingState.tierName + '\n' +
+            'Total Estimated Price: Rs. ' + formatPrice(total) + '\n\n' +
+            'Our VIP concierge will text confirmation to ' + (clientPhone || 'your phone') + ' within 15 minutes.';
         alert(msg);
     }
 
-    // Shopping Cart (PKR / Rs.)
     function addToCart(title, price) {
         var numPrice = Number(price) || 0;
         cart.count += 1;
@@ -240,10 +218,9 @@
         }
 
         alert('Added "' + title + '" (Rs. ' + formatPrice(numPrice) + ') to cart.\n' +
-              'Total Cart: ' + cart.count + ' item(s) • Rs. ' + formatPrice(cart.subtotal));
+            'Total Cart: ' + cart.count + ' item(s) â€¢ Rs. ' + formatPrice(cart.subtotal));
     }
 
-    // Search handler
     function handleSearchClick() {
         var query = prompt('Search our salon services or cosmetic products:');
         if (query && query.trim()) {
@@ -259,8 +236,6 @@
         }
     }
 
-
-    // ES5 Mobile Navigation Drawer Toggle
     function toggleMobileMenu(isOpen) {
         var drawer = document.getElementById('mobile-menu-drawer');
         var backdrop = document.getElementById('mobile-menu-backdrop');
@@ -305,7 +280,6 @@
         }
     }
 
-    // Expose methods to global window for inline onclick handlers
     window.switchBookingMode = switchBookingMode;
     window.selectServiceItem = selectServiceItem;
     window.prefillBooking = prefillBooking;
@@ -318,9 +292,7 @@
     window.handleSearchClick = handleSearchClick;
     window.toggleMobileMenu = toggleMobileMenu;
 
-    // Bind DOM event listeners
     function init() {
-        // Navigation links smooth scroll
         var navLinks = document.querySelectorAll('a[data-path]');
         var i;
         for (i = 0; i < navLinks.length; i++) {
@@ -340,7 +312,6 @@
             })(navLinks[i]);
         }
 
-        // Close mobile drawer on Escape key or Desktop resize
         if (window.addEventListener) {
             window.addEventListener('keydown', function (e) {
                 if (e.keyCode === 27) {
@@ -361,7 +332,6 @@
             });
         }
 
-        // Newsletter forms
         var forms = document.getElementsByTagName('form');
         for (i = 0; i < forms.length; i++) {
             forms[i].onsubmit = function (e) {
@@ -375,7 +345,6 @@
             };
         }
 
-        // Date input change
         var dateInput = document.getElementById('booking-date');
         if (dateInput) {
             dateInput.onchange = function () {
@@ -383,8 +352,6 @@
             };
         }
 
-
-        // Compute initial summary
         updateSummary();
     }
 
